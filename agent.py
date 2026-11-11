@@ -1,4 +1,6 @@
+import os
 import logging
+from pathlib import Path
 from dotenv import load_dotenv
 from livekit import agents
 from livekit.agents import AgentServer, AgentSession, Agent
@@ -7,7 +9,9 @@ from livekit.plugins import google
 from prompts import AGENT_INSTRUCTION, GREETING_MESSAGE
 from api_tools import LogronoDeporteAPI
 
-load_dotenv(".env")
+# Carga garantizada del archivo .env
+env_path = Path(__file__).parent / ".env"
+load_dotenv(dotenv_path=env_path, override=True)
 
 logger = logging.getLogger("logrono-voice-agent")
 logger.setLevel(logging.INFO)
@@ -18,11 +22,6 @@ class Assistant(Agent, LogronoDeporteAPI):
         super().__init__(instructions=AGENT_INSTRUCTION)
 
     async def on_enter(self) -> None:
-        """
-        Este método oficial de LiveKit 1.x se ejecuta automáticamente
-        en el instante exacto en que el agente entra en la sesión activa
-        y el canal de audio con el usuario ya está listo.
-        """
         logger.info("Agente conectado a la sala. Generando saludo inicial...")
         await self.session.generate_reply(
             user_input="Hola, acabo de conectarme.",
@@ -39,6 +38,9 @@ async def my_agent(ctx: agents.JobContext):
 
     session = AgentSession(
         llm=google.realtime.RealtimeModel(
+            model="gemini-3.8-live",
+            api_version="v1alpha",
+            api_key=os.getenv("GOOGLE_API_KEY", "").strip(),
             voice="Puck",
             temperature=0.8,
             instructions=AGENT_INSTRUCTION,
