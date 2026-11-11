@@ -1,0 +1,9 @@
+livekit-agents>=1.2.18
+livekit-plugins-google>=1.8.11
+livekit-plugins-silero>=1.8.11
+livekit-plugins-noise-cancellation>=0.3.3
+mem0ai
+duckduckgo-search
+langchain_community
+requests
+python-dotenv
