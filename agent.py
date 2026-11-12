@@ -42,7 +42,7 @@ async def my_agent(ctx: agents.JobContext):
             api_key=os.getenv("GOOGLE_API_KEY", "").strip(),
             voice="Puck",
             language="es-ES",
-            temperature=0.6,
+            temperature=0.2,
             instructions=AGENT_INSTRUCTION,
         ),
     )
