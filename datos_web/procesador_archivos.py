@@ -14,13 +14,11 @@ from google.genai import types
 load_dotenv(Path(__file__).resolve().parent.parent / ".env", override=True)
 logger = logging.getLogger("procesador_archivos")
 
-# Silenciamos los warnings internos de pypdf sobre fuentes CFF o punteros antiguos
 logging.getLogger("pypdf").setLevel(logging.ERROR)
 
 EXTENSIONES_DOCUMENTOS = (".pdf", ".docx", ".xlsx", ".csv")
 EXTENSIONES_IMAGENES = (".jpg", ".jpeg", ".png", ".webp")
 
-# Ponlo en True solo si deseas usar Gemini 2.5 Flash para hacer OCR de imágenes/PDFs escaneados
 USAR_OCR_GEMINI = False
 
 _PALABRAS_ARCHIVO_DESCARTABLE = (
@@ -42,8 +40,7 @@ def _transcribir_con_gemini(contenido_bytes: bytes, mime_type: str, origen: str)
     prompt = (
         "Analiza este archivo oficial de Logroño Deporte. "
         "Si es una imagen decorativa o un mapa sin tablas de datos, responde solo DECORATIVA. "
-        "Si contiene precios, tarifas, horarios, normas, calendario o requisitos, "
-        "transcribe todos sus datos exactamente en formato Markdown (.md)."
+        "Si contiene precios, tarifas, horarios, normas, calendario o requisitos, transcribe todos sus datos exactamente en formato Markdown (.md)."
     )
 
     try:

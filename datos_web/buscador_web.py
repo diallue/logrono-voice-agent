@@ -67,7 +67,7 @@ def _consultar_buscador_joomla(termino: str) -> list[str]:
         )
         if resp.status_code == 200:
             for href in _REGEX_ENLACES_HTML.findall(resp.text):
-                if href.startswith("/") and not any(x in href.lower() for x in _RUTAS_EXCLUIDAS):
+                if len(href.strip("/")) > 2 and href.startswith("/") and not any(x in href.lower() for x in _RUTAS_EXCLUIDAS):
                     url_completa = f"{URL_BASE_WEB}{href.rstrip('/')}"
                     if url_completa not in urls:
                         urls.append(url_completa)
@@ -85,10 +85,11 @@ def buscar_en_web_en_vivo(consulta: str, palabras: list[str]) -> list[str]:
         if p in catalogo and catalogo[p] not in urls_candidatas:
             urls_candidatas.append(catalogo[p])
 
-    termino = " ".join(palabras[:4]) if palabras else consulta
-    for url_joomla in _consultar_buscador_joomla(termino):
-        if url_joomla not in urls_candidatas:
-            urls_candidatas.append(url_joomla)
+    if not urls_candidatas:
+        termino = " ".join(palabras[:4]) if palabras else consulta
+        for url_joomla in _consultar_buscador_joomla(termino):
+            if url_joomla not in urls_candidatas:
+                urls_candidatas.append(url_joomla)
 
     bloques_descargados: list[str] = []
     for url in urls_candidatas[:4]:

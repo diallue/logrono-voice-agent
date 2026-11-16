@@ -53,8 +53,7 @@ def descargar_documento_adjunto(url: str) -> str:
 
 def sincronizar_conocimiento() -> None:
     """
-    Lee catalogo_urls.json, descarga las páginas HTML y los documentos PDF/Excel vigentes,
-    y genera los 5 archivos .md en datos_web/conocimiento/.
+    Lee catalogo_urls.json, descarga las páginas HTML y los documentos PDF/Excel vigentes, y genera los 5 archivos .md en datos_web/conocimiento/.
     """
     RUTA_CONOCIMIENTO.mkdir(parents=True, exist_ok=True)
     datos_catalogo = json.loads(RUTA_CATALOGO.read_text(encoding="utf-8"))

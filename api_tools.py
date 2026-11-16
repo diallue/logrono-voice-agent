@@ -13,11 +13,8 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 logger = logging.getLogger("api_tools")
 logger.setLevel(logging.INFO)
 
-# Caché en memoria de respuestas Markdown (.md) por consulta
 _CACHE_WEB: dict[str, str] = {}
-# Caché en memoria de cada URL individual ya convertida a Markdown
 _CACHE_PAGINAS_MD: dict[str, str] = {}
-# Directorio global autodescubierto de las URLs vigentes de logronodeporte.es (url -> título)
 _DIRECTORIO_WEB: dict[str, str] = {}
 
 HEADERS_WEB = {
@@ -32,7 +29,6 @@ EXTENSIONES_PROHIBIDAS = (
     ".css", ".js", ".png", ".jpg", ".jpeg", ".gif", ".svg", ".mp4", ".ico"
 )
 
-# Excluimos '/component/k2/' y '/noticias' para evitar notas de prensa antiguas (2015/2016) con precios caducados
 RUTAS_SISTEMA = (
     "wp-content", "wp-includes", "wp-json", "feed", "/images/",
     "/media/", "/templates/", "/components/", "/component/search",
@@ -52,7 +48,6 @@ STOPWORDS_ES = {
 }
 
 MAPA_INTENCIONES_WEB = {
-    # Reservas, localizadores, anulaciones y alquiler de instalaciones
     "LOCALIZADOR": ["MODIFICAR", "ANULAR", "RESERVA", "PREGUNTAS", "CONDICIONES"],
     "ANULAR": ["MODIFICAR", "ANULAR", "RESERVA", "CONDICIONES"],
     "ANULACION": ["MODIFICAR", "ANULAR", "RESERVA", "CONDICIONES"],
@@ -69,7 +64,6 @@ MAPA_INTENCIONES_WEB = {
     "TENIS": ["RESERVAS", "TARIFAS", "INSTALACIONES"],
     "FRONTON": ["RESERVAS", "TARIFAS", "INSTALACIONES"],
     "ROCODROMO": ["ROCODROMO", "TARIFAS", "RESERVAS", "NORIAS", "GAUNAS"],
-    # Tarifas, precios, tipos de abono y descuentos
     "PRECIO": ["TARIFAS", "ABONO", "TEMPORADA"],
     "PRECIOS": ["TARIFAS", "ABONO", "TEMPORADA"],
     "TARIFA": ["TARIFAS", "ABONO", "TEMPORADA"],
@@ -88,7 +82,6 @@ MAPA_INTENCIONES_WEB = {
     "SOCIAL": ["SOCIAL", "ABONO", "TEMPORADA", "TARIFAS"],
     "DESCUENTO": ["TARIFAS", "ABONO", "TEMPORADA"],
     "VERANO": ["TEMPORADA", "ABONO", "TARIFAS", "NORIAS", "CORTIJO"],
-    # Inscripciones, cursos, sorteos y actividades a la carta / virtuales
     "APUNTAR": ["INSCRIPCION", "ACTIVIDADES", "CARTA", "PREGUNTAS"],
     "APUNTARME": ["INSCRIPCION", "ACTIVIDADES", "CARTA", "PREGUNTAS"],
     "INSCRIBIR": ["INSCRIPCION", "ACTIVIDADES", "CARTA"],
@@ -102,7 +95,6 @@ MAPA_INTENCIONES_WEB = {
     "SUELTAS": ["CARTA", "ACTIVIDADES"],
     "VIRTUAL": ["VIRTUALES", "ACTIVIDADES"],
     "CASA": ["VIRTUALES", "ACTIVIDADES"],
-    # Servicios especiales: Espacio Hidrotermal, Pista de Hielo, Musculación, Médico
     "BALNEARIO": ["ESPACIO", "HIDROTERMAL", "LOBETE"],
     "SPA": ["ESPACIO", "HIDROTERMAL", "LOBETE"],
     "HIDROTERMAL": ["ESPACIO", "HIDROTERMAL", "LOBETE"],
@@ -118,7 +110,6 @@ MAPA_INTENCIONES_WEB = {
     "MEDICO": ["SALUD", "MOVIMIENTO", "RECONOCIMIENTO", "TARIFAS"],
     "RECONOCIMIENTO": ["SALUD", "MOVIMIENTO", "PREGUNTAS", "TARIFAS"],
     "ESFUERZO": ["SALUD", "MOVIMIENTO", "TARIFAS"],
-    # Trámites administrativos, oficinas, normativa y FAQs
     "BAJA": ["CONDICIONES", "GENERALES", "PREGUNTAS", "CONTACTO"],
     "BANCO": ["CAMBIO", "CUENTA"],
     "BANCARIA": ["CAMBIO", "CUENTA"],
@@ -145,7 +136,6 @@ MAPA_INTENCIONES_WEB = {
     "GORRO": ["PREGUNTAS", "FRECUENTES", "CONDICIONES"],
 }
 
-# Base de respaldo oficial verificada para documentos que en la web están subidos como PDF o formularios JS
 INFO_OFICIAL_RESPALDO = {
     "LOCALIZADOR": (
         "Gestión de Reservas y Código Localizador: Al comprar un ticket, bono o reservar pista online se genera un "
@@ -389,7 +379,6 @@ def _html_a_markdown(html_raw: str) -> str:
     parser.feed(html_raw)
     md = parser.obtener_markdown()
 
-    # 1. Eliminamos la cabecera de filtros de búsqueda de Joomla si aparece al principio
     md = re.sub(
         r"^.*?Buscar\s*-\s*Videos\s*",
         "",
@@ -398,14 +387,12 @@ def _html_a_markdown(html_raw: str) -> str:
         flags=re.IGNORECASE | re.DOTALL,
     )
 
-    # 2. Cortamos justo al terminar el artículo central
     for marcador_fin in ("volver arriba", "Mostrando artículos:", "COMPRAS Y RESERVAS", "LOGROÑO DEPORTE\nEmpresa"):
         idx = md.find(marcador_fin)
         if idx != -1 and idx > 80:
             md = md[:idx]
             break
 
-    # 3. Reemplazamos el bloqueo anti-spam de correo de Joomla por el email oficial real
     md = re.sub(
         r"Esta direcci[oó]n de correo electr[oó]nico est[aá] siendo protegida contra los robots de spam\.\s*Necesita tener JavaScript habilitado para poder verlo\.",
         "info@logronodeporte.es",
@@ -453,8 +440,7 @@ class LogronoDeporteAPI:
 
     @function_tool(
         description=(
-            "Obtiene información real, actividades deportivas, cursos y horarios de cualquier "
-            "instalación o polideportivo de Logroño Deporte (ej: Lobete, Las Gaunas, La Ribera, Las Norias, Pradoviejo)."
+            "Obtiene información real, actividades deportivas, cursos y horarios de cualquier instalación o polideportivo de Logroño Deporte (ej: Lobete, Las Gaunas, La Ribera, Las Norias, Pradoviejo)."
         )
     )
     async def obtener_info_instalacion(self, nombre_instalacion: str) -> str:
@@ -567,14 +553,12 @@ class LogronoDeporteAPI:
         def _scrape_web_md() -> str:
             bloques_md: list[str] = []
 
-            # 1. Inyección de respaldo oficial verificado (cubre documentos que en la web están en PDF o JS)
             respaldos_incluidos = set()
             for clave_resp, texto_resp in INFO_OFICIAL_RESPALDO.items():
                 if clave_resp in clave_cache and texto_resp not in respaldos_incluidos:
                     bloques_md.append(f"## Resumen Oficial Verificado\n{texto_resp}")
                     respaldos_incluidos.add(texto_resp)
 
-            # 2. Extracción de palabras clave, raíces léxicas y expansión semántica de intenciones
             palabras_base = [
                 p for p in re.findall(r"[A-Z0-9]+", clave_cache)
                 if len(p) > 2 and p not in STOPWORDS_ES
@@ -591,7 +575,6 @@ class LogronoDeporteAPI:
             raices_base = [_raiz_palabra(p) for p in palabras_base if len(p) >= 4]
             raices_expandidas = [_raiz_palabra(p) for p in palabras_expandidas if len(p) >= 4]
 
-            # 3. Lotes de búsqueda para Joomla (máx. 20 chars sin cortar palabras)
             lotes_joomla: list[str] = []
             lote_actual: list[str] = []
             todas_para_buscar = palabras_base if palabras_base else palabras_expandidas[:3]
@@ -610,7 +593,6 @@ class LogronoDeporteAPI:
             if not lotes_joomla:
                 lotes_joomla = [consulta[:20].strip()]
 
-            # 4. Búsqueda en Joomla (/component/search/)
             urls_resultados_joomla: list[str] = []
 
             for lote in lotes_joomla[:2]:
@@ -649,13 +631,11 @@ class LogronoDeporteAPI:
                 except Exception:
                     pass
 
-            # 5. Sistema de puntuación estricto: exige coincidencia real en URL o título para evitar falsos positivos
             puntuaciones: dict[str, int] = {}
 
             for url_cand, titulo_cand in list(_DIRECTORIO_WEB.items()):
                 url_norm = _normalizar(url_cand)
 
-                # Filtro de seguridad: Espacio Hidrotermal y Pista de Hielo solo se abren si el usuario pregunta por ellos
                 if "ESPACIO-HIDROTERMAL" in url_norm and not any(
                     x in clave_cache for x in ("HIDROTERMAL", "BALNEARIO", "SPA", "SAUNA", "TERMA", "JACUZZI", "LOBETE")
                 ):
@@ -690,7 +670,6 @@ class LogronoDeporteAPI:
                         if raiz_exp in url_norm or raiz_exp in titulo_cand:
                             pts += 2
 
-                # Solo sumamos el bonus del buscador de texto de Joomla si la página ya tiene relación temática (pts > 0)
                 if pts > 0 and url_cand in urls_resultados_joomla:
                     pos = urls_resultados_joomla.index(url_cand)
                     pts += max(8 - pos * 2, 2)
@@ -700,7 +679,6 @@ class LogronoDeporteAPI:
 
             ranking = sorted(puntuaciones.items(), key=lambda x: x[1], reverse=True)
 
-            # 6. Descarga de las páginas oficiales relevantes (máximo 2 páginas con contenido)
             paginas_descargadas = 0
             for url_destino, pts in ranking[:3]:
                 if paginas_descargadas >= 2:
