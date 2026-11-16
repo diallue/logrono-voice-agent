@@ -1,0 +1,98 @@
+{
+  "archivos_conocimiento": [
+    {
+      "archivo": "01_tarifas_y_abonos.md",
+      "titulo": "Tarifas 2026 y Modalidades de Abono de Logroño Deporte",
+      "resumen_verificado": "Modalidades de alta en Logroño Deporte:\n- Abonado: Paga cuota anual (120,60 € adulto empadronado; 80,40 € menor o +66 años; 241,00 € familiar; 120,60 € familiar monoparental; 60,20 € abono social) y tiene acceso gratuito a las piscinas municipales de invierno y verano, descuentos en cursos y pistas, y plazo preferente.\n- Usuario: Tarjeta sin cuota anual (6,00 € expedición/duplicado) para pagar por uso.\n- Abono de Temporada de Verano: Exclusivo para Las Norias y El Cortijo/Varea (87,40 € adulto empadronado; 74,60 € menor/+66).",
+      "urls_html": [
+        "https://www.logronodeporte.es/tarifas-logrono-deporte",
+        "https://www.logronodeporte.es/abono-de-temporada",
+        "https://www.logronodeporte.es/11-tramites-y-documentos/usuarios/15-alta"
+      ],
+      "urls_documentos": [
+        "https://www.logronodeporte.es/images/pdf/tarifas-2026.pdf",
+        "https://www.logronodeporte.es/images/pdf/Condiciones-del-Abono-social%202026.pdf",
+        "https://www.logronodeporte.es/images/pdf/Condiciones-abono-familias-monoparentales-2026.pdf"
+      ]
+    },
+    {
+      "archivo": "02_reservas_y_localizador.md",
+      "titulo": "Reservas de Pistas, Código Localizador, Anulaciones y Condiciones de Compra",
+      "resumen_verificado": "Normativa de Reservas y Código Localizador:\n- Antelación: Reservas online en logronodeporte.es con hasta 7 días naturales de antelación (abonados también por teléfono en la instalación desde las 08:00 h para el mismo día).\n- Pérdida de Localizador: Puede reimprimirse en 'Compra y Reserva -> Modificar/Anular' (opción Imprimir) con la fecha de compra/reserva, en el Portal del Abonado o llamando al 941 27 70 55.\n- Cancelación de reserva: Online con fecha y localizador hasta 1 hora antes del inicio.\n- Sanción: 3 reservas sin asistir y sin cancelar conllevan 1 mes sin poder reservar.",
+      "urls_html": [
+        "https://www.logronodeporte.es/condiciones-generales-de-uso",
+        "https://www.logronodeporte.es/reservas-online-y-offline",
+        "https://www.logronodeporte.es/instalaciones/reserva-de-instalaciones"
+      ],
+      "urls_documentos": [
+        "https://www.logronodeporte.es/images/pdf/condiciones-reservas-temporada-26-27.pdf"
+      ]
+    },
+    {
+      "archivo": "03_actividades_y_carta.md",
+      "titulo": "Inscripción en Actividades, Actividades a la Carta, Virtuales y 'Si no puedes hoy'",
+      "resumen_verificado": "Inscripciones, Actividades a la Carta y Virtuales:\n- Canales de inscripción: Web logronodeporte.es, teléfono 010 (desde Logroño) o 941 27 70 01 (fuera de Logroño o móviles), y presencial solo para mayores y personas con discapacidad.\n- Tarifas A la Carta (+16 años): Entrada diaria 5 € abonado / 10 € usuario; Bono 10 sesiones 38 € abonado / 76 € usuario; Bono 20 sesiones 65 € abonado / 130 € usuario; Tarifa Plana Mensual 45 € abonado / 90 € usuario; Tarifa Plana Plus 52 € abonado / 104 € usuario.\n- 'Si no puedes hoy': Permite a abonados en cursos anuales cambiar puntualmente una sesión por otra de la misma actividad en la misma semana desde el Portal del Abonado hasta 1h antes.",
+      "urls_html": [
+        "https://www.logronodeporte.es/actividades/actividades-a-la-carta-new",
+        "https://www.logronodeporte.es/actividad-virtual",
+        "https://www.logronodeporte.es/ciclo-indoor-virtual",
+        "https://www.logronodeporte.es/preguntanos"
+      ],
+      "urls_documentos": [
+        "https://www.logronodeporte.es/images/pdf/NORMAS_COMUNES_26-27.pdf",
+        "https://www.logronodeporte.es/images/pdf/si-no-puedes-2025.pdf",
+        "https://www.logronodeporte.es/images/pdf/virtuales-gaunas-26-27.pdf"
+      ]
+    },
+    {
+      "archivo": "04_instalaciones_y_servicios.md",
+      "titulo": "Espacio Hidrotermal, Pista de Hielo, Salas de Musculación y Centros Deportivos",
+      "resumen_verificado": "Servicios Especiales y Centros Deportivos:\n- Espacio Hidrotermal (CDM Lobete): Sesiones de 90 min (+16 años y horario familiar). Obligatorio bañador, gorro, chancletas y toalla. Adulto: 5,70 € abonado / 11,20 € usuario (Hora Valle: 3,10 € / 6,20 €).\n- Pista de Hielo (CDM Lobete): Obligatorio guantes, manga larga, pantalón largo y casco para menores de 16 años. Entrada +16: 4,90 € abonado / 9,80 € usuario; menor 16: 3,50 € / 7,00 €.\n- Salas de Musculación: La Ribera (65 plazas), Lobete (50 plazas) y Las Gaunas (40 plazas). Entrada: 4,90 € abonado / 9,70 € usuario; mes abonado 14,50 € (+60 años 8,80 €); Combo anual octubre-mayo 70 €.",
+      "urls_html": [
+        "https://www.logronodeporte.es/c-d-m-lobete/espacio-hidrotermal",
+        "https://www.logronodeporte.es/c-d-m-lobete/pista-de-hielo",
+        "https://www.logronodeporte.es/instalaciones/salas-de-musculacion",
+        "https://www.logronodeporte.es/c-d-m-lobete",
+        "https://www.logronodeporte.es/c-d-m-la-ribera",
+        "https://www.logronodeporte.es/c-d-m-las-gaunas",
+        "https://www.logronodeporte.es/c-d-m-las-norias",
+        "https://www.logronodeporte.es/ciudad-del-futbol-de-pradoviejo",
+        "https://www.logronodeporte.es/piscinas-m-el-cortijo",
+        "https://www.logronodeporte.es/instalaciones/item/536-campo-de-golf-de-logrono"
+      ],
+      "urls_documentos": [
+        "https://www.logronodeporte.es/images/combo-de-musculacion-2025-26.pdf",
+        "https://www.logronodeporte.es/images/pdf/Autorizacion_menor_musculacion.pdf"
+      ]
+    },
+    {
+      "archivo": "05_tramites_oficinas_y_faqs.md",
+      "titulo": "Trámites Administrativos, Oficinas, Cambio de Cuenta SEPA y Preguntas Frecuentes",
+      "resumen_verificado": "Oficinas Centrales y Trámites:\n- Dirección: Plaza de las Chiribitas, 1, 26004 Logroño. Teléfono: 941 27 70 55 y 010. Correo: info@logronodeporte.es.\n- Horario oficinas: Invierno (sep-jun) L-V 08:30-14:30, martes tarde 17:00-19:00 y miércoles continuo 08:30-17:00. Verano (jul-ago) L-V 08:00-15:00.\n- Cambio de cuenta bancaria (SEPA): Descargar el impreso SEPA en la web y enviarlo firmado por el titular a info@logronodeporte.es o entregarlo en oficinas.",
+      "urls_html": [
+        "https://www.logronodeporte.es/cambio-de-cuenta",
+        "https://www.logronodeporte.es/horario-de-oficina",
+        "https://www.logronodeporte.es/preguntas-frecuentes",
+        "https://www.logronodeporte.es/tramites-y-documentos"
+      ],
+      "urls_documentos": [
+        "https://www.logronodeporte.es/images/pdf/NORMATIVA_USO_MATERIAL_PISCINA_2026.pdf"
+      ]
+    }
+  ],
+  "urls_especificas_vivo": {
+    "ESTATUTOS": "https://www.logronodeporte.es/images/pdf/ESTATUTOS.pdf",
+    "ORGANIGRAMA": "https://www.logronodeporte.es/images/pdf/transparencia/ORGANIGRAMA_LOGRONO_DEPORTE.pdf",
+    "GERENTE": "https://www.logronodeporte.es/images/pdf/transparencia/ORGANIGRAMA_LOGRONO_DEPORTE.pdf",
+    "DENUNCIA": "https://www.logronodeporte.es/wf-menu-config/canal-de-denuncias",
+    "DENUNCIAS": "https://www.logronodeporte.es/wf-menu-config/canal-de-denuncias",
+    "TRANSPARENCIA": "https://www.logronodeporte.es/logrono-deporte-transparencia",
+    "CONTRATANTE": "https://www.logronodeporte.es/perfil-del-contratante",
+    "LICITACION": "https://www.logronodeporte.es/perfil-del-contratante",
+    "AYUDAS": "https://www.logronodeporte.es/images/pdf/2026-2027_bases_reguladoras_ayudas_ligas_nacionales.pdf",
+    "SUBVENCIONES": "https://www.logronodeporte.es/images/pdf/2026-2027_bases_reguladoras_ayudas_ligas_nacionales.pdf",
+    "REGLAMENTO": "https://www.logronodeporte.es/images/pdf/reglamento2019.pdf",
+    "HAMACAS": "https://www.logronodeporte.es/images/pdf/NORMATIVA%20DE%20USO%20DE%20LA%20ZONA%20DE%20DEPOSITO%20DE%20HAMACAS.pdf",
+    "TORNEO": "https://www.logronodeporte.es/images/pdf/normativa-torneo-municipal-26-27.pdf"
+  }
+}
