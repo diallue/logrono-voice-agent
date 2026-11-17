@@ -86,42 +86,48 @@ def _buscar_cursos_valoracion_api(base_url: str, dni: str) -> str | None:
     return "; ".join(cursos) if cursos else None
 
 
-def _obtener_ficha_dni(gateway_url: str, valoracion_url: str, dni_limpio: str, dni_voz: str) -> str:
-    """Orquesta la validación y búsqueda secuencial en las 3 fuentes."""
+def _obtener_ficha_dni(gateway_url: str, valoracion_url: str, dni_limpio: str, dni_voz: str) -> tuple[str, str | None]:
+    """Orquesta la validación y búsqueda secuencial en las 3 fuentes. Devuelve (mensaje, cursos_o_None)."""
     if not es_dni_valido(dni_limpio):
         return (
-            f"FORMATO DE DNI INCOMPLETO O INCORRECTO. Has entendido: '{dni_voz}' ({len(dni_limpio)} caracteres). Un DNI debe tener 8 números y 1 letra (o letra inicial, 7 números y letra final si es NIE). "
-            f"Repítele al usuario dígito a dígito exactamente lo que has entendido ({dni_voz}) y pídele que te indique dónde está el fallo o que diga una palabra que empiece por la letra de su DNI (como 'Q de queso' o 'B de Burgos')."
+            f"FORMATO DE DNI INCOMPLETO O INCORRECTO. Has entendido: '{dni_voz}' ({len(dni_limpio)} caracteres). "
+            "Un DNI debe tener 8 números y 1 letra (o letra inicial, 7 números y letra final si es NIE). "
+            f"Repítele al usuario dígito a dígito exactamente lo que has entendido ({dni_voz}) "
+            "y pídele que te indique dónde está el fallo o que diga una palabra que empiece por la letra de su DNI (como 'Q de queso' o 'B de Burgos').",
+            None,
         )
 
     try:
         cursos_gw = _buscar_cursos_gateway(gateway_url, dni_limpio)
         if cursos_gw:
-            return f"DNI verificado ({dni_voz}). El abonado está inscrito en: {cursos_gw}."
+            return f"DNI verificado ({dni_voz}). El abonado está inscrito en: {cursos_gw}.", cursos_gw
     except Exception as e:
         logger.debug(f"Gateway sin datos para {dni_limpio}: {e}")
 
     try:
         cursos_val = _buscar_cursos_valoracion_api(valoracion_url, dni_limpio)
         if cursos_val:
-            return f"DNI verificado ({dni_voz}). Cursos asociados: {cursos_val}."
+            return f"DNI verificado ({dni_voz}). Cursos asociados: {cursos_val}.", cursos_val
     except Exception as e:
         logger.debug(f"Valoración API sin datos para {dni_limpio}: {e}")
 
     if dni_limpio in DNIS_PRUEBA:
-        return f"DNI verificado ({dni_voz}). El usuario está inscrito en: {DNIS_PRUEBA[dni_limpio]}."
+        cursos_demo = DNIS_PRUEBA[dni_limpio]
+        return f"DNI verificado ({dni_voz}). El usuario está inscrito en: {cursos_demo}.", cursos_demo
 
     return (
         f"NO SE ENCONTRARON CURSOS para el DNI entendido: '{dni_voz}'. "
         f"Dile al usuario exactamente: 'He entendido el DNI {dni_voz}, pero no me aparecen cursos asociados. "
-        "¿Me puedes decir en qué número o letra está el fallo? Si es la letra, puedes decirme una palabra de ejemplo, como Q de queso'."
+        "¿Me puedes decir en qué número o letra está el fallo? Si es la letra, puedes decirme una palabra de ejemplo, como Q de queso'.",
+        None,
     )
 
 
 class ToolAbonadosDNI:
     @function_tool(
         description=(
-            "Consulta los cursos, actividades deportivas y horarios en los que está inscrito un abonado o usuario a partir de su DNI o NIE."
+            "Consulta los cursos, actividades deportivas y horarios en los que está inscrito "
+            "un abonado o usuario a partir de su DNI o NIE."
         )
     )
     async def consultar_cursos_abonado(self, dni: str) -> str:
@@ -137,7 +143,20 @@ class ToolAbonadosDNI:
         valoracion_url = os.getenv("VALORACION_API_URL", "https://valoracion-api.logronodeporte.es")
 
         try:
-            return await asyncio.to_thread(_obtener_ficha_dni, gateway_url, valoracion_url, dni_limpio, dni_voz)
+            mensaje, cursos = await asyncio.to_thread(
+                _obtener_ficha_dni, gateway_url, valoracion_url, dni_limpio, dni_voz
+            )
+            if cursos:
+                if not hasattr(self, "sesion_abonado"):
+                    self.sesion_abonado = {}
+                self.sesion_abonado.update({
+                    "verificado": True,
+                    "dni": dni_limpio,
+                    "dni_voz": dni_voz,
+                    "cursos": cursos,
+                })
+                logger.info(f"[SESION] Abonado {dni_limpio} guardado en memoria de la llamada.")
+            return mensaje
         except Exception as e:
             logger.error(f"Error en consultar_cursos_abonado: {e}")
             return "Hubo un problema técnico al consultar la ficha del abonado en este momento."
