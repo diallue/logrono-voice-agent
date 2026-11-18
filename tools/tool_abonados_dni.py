@@ -57,7 +57,7 @@ def _buscar_cursos_gateway(base_url: str, dni: str) -> str | None:
 
 
 def _buscar_cursos_valoracion_api(base_url: str, dni: str) -> str | None:
-    """Vía 2: Consulta directamente los cursos del DNI en la API de Valoraciones."""
+    """Vía 2: Consulta directamente los cursos del DNI en la API de valoraciones."""
     url = f"{base_url.rstrip('/')}/course/search_by_dni/{dni}"
     r_val = requests.get(url, timeout=2.5, verify=False)
     if r_val.status_code != 200 or not r_val.text.strip():

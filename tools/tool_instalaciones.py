@@ -144,7 +144,6 @@ def _buscar_actividad_en_centros(base_url: str, nombre_actividad: str) -> str:
                 continue
             if any(p in nom_act for p in palabras) or any(r in nom_act for r in raices):
                 centro = (c.get("descripcion_instalacion") or c.get("instalacion") or "Centro").strip()
-                # Limitamos a 3 horarios por centro para que salgan todos los polideportivos disponibles
                 if conteo_por_centro.get(centro, 0) >= 3:
                     continue
 

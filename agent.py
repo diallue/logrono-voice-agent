@@ -3,7 +3,7 @@ import asyncio
 import logging
 from pathlib import Path
 from dotenv import load_dotenv
-from livekit import agents
+from livekit import agents, rtc
 from livekit.agents import AgentServer, AgentSession, Agent
 from livekit.plugins import google
 
@@ -23,11 +23,11 @@ class Assistant(Agent, LogronoDeporteTools):
         LogronoDeporteTools.__init__(self)
 
     async def on_enter(self) -> None:
-        logger.info("Agente conectado a la sala. Generando saludo inicial...")
+        logger.info("Agente conectado a la sala. Generando saludo y menú inicial...")
         await asyncio.sleep(0.4)
         await self.session.generate_reply(
-            user_input="Hola, acabo de conectarme.",
-            instructions=f"Saluda al usuario inmediatamente diciendo exactamente esto: '{GREETING_MESSAGE}'",
+            user_input="Hola, acabo de llamar.",
+            instructions=f"Saluda al usuario inmediatamente diciendo exactamente este mensaje completo: '{GREETING_MESSAGE}'",
         )
 
 
@@ -51,6 +51,18 @@ async def my_agent(ctx: agents.JobContext):
             instructions=instrucciones_actuales,
         ),
     )
+
+    @ctx.room.on("sip_dtmf_received")
+    def on_dtmf_received(dtmf: rtc.SipDTMF):
+        digito = getattr(dtmf, "digit", "")
+        logger.info(f"[DTMF] Tecla pulsada por el usuario: '{digito}'")
+        if digito:
+            asyncio.create_task(
+                session.generate_reply(
+                    user_input=f"He pulsado la tecla {digito} del menú.",
+                    instructions=f"El usuario acaba de pulsar la opción {digito} del menú inicial. Atiéndele según esa opción.",
+                )
+            )
 
     await session.start(
         room=ctx.room,
