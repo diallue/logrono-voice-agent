@@ -1,0 +1,462 @@
+[
+  {
+    "session_id": "ses_f813a1bf61",
+    "sala": "sala-test",
+    "fecha_inicio": "2026-11-18T12:00:00",
+    "fecha_fin": "2026-11-18T12:31:57",
+    "duracion_seg": 42.5,
+    "abonado_hash": "abo_567ea22e34",
+    "herramientas_usadas": [
+      "consultar_cursos_abonado"
+    ],
+    "num_turnos": 2,
+    "dialogo": [
+      {
+        "rol": "usuario",
+        "texto": "Hola, mi DNI es [DNI_PROTEGIDO], que cursos tengo?",
+        "hora": "12:31:57"
+      },
+      {
+        "rol": "agente",
+        "texto": "Tienes Pilates en Lobete.",
+        "hora": "12:31:57"
+      }
+    ],
+    "analitica_ia": {
+      "procesado": false,
+      "categoria_principal": "Pendiente de análisis nocturno",
+      "intencion": "",
+      "resuelta": true,
+      "friccion_detectada": false,
+      "tags": []
+    }
+  },
+  {
+    "session_id": "ses_614a650d72",
+    "sala": "console",
+    "fecha_inicio": "2026-11-18T12:59:24",
+    "fecha_fin": "2026-11-18T13:00:19",
+    "duracion_seg": 55.0,
+    "abonado_hash": "anonimo",
+    "herramientas_usadas": [],
+    "num_turnos": 1,
+    "dialogo": [
+      {
+        "rol": "agente",
+        "texto": "¡Hola! Bienvenido a Logroño Deporte. Para hacer una consulta sobre tarifas o abonos, pulse o diga 1; para hacer una consulta sobre reservas, anulaciones o código localizador, pulse o diga 2; para hacer una consulta sobre inscripción en actividades o cursos a la carta, pulse o diga 3; para información de instalaciones, aforo de",
+        "hora": "13:00:19"
+      }
+    ],
+    "analitica_ia": {
+      "procesado": false,
+      "categoria_principal": "Pendiente de análisis nocturno",
+      "intencion": "",
+      "resuelta": true,
+      "friccion_detectada": false,
+      "tags": []
+    }
+  },
+  {
+    "session_id": "ses_4d4eba48de",
+    "sala": "console",
+    "fecha_inicio": "2026-11-18T13:00:26",
+    "fecha_fin": "2026-11-18T13:01:30",
+    "duracion_seg": 64.3,
+    "abonado_hash": "anonimo",
+    "herramientas_usadas": [
+      "consultar_ocupacion_gimnasios"
+    ],
+    "num_turnos": 6,
+    "dialogo": [
+      {
+        "rol": "agente",
+        "texto": "¡Hola! Bienvenido a Logroño Deporte. Para hacer una consulta sobre tarifas o abonos, pulse o diga 1; para hacer una consulta sobre reservas, anulaciones o código",
+        "hora": "13:00:42"
+      },
+      {
+        "rol": "usuario",
+        "texto": "cuatro",
+        "hora": "13:00:55"
+      },
+      {
+        "rol": "agente",
+        "texto": "Estupendo, instalaciones y servicios. ¿Quieres consultar los horarios de algún polideportivo, cuánta gente hay ahora mismo en los gimnasios, el Espacio Hidrotermal o la Pista de Hielo?",
+        "hora": "13:00:55"
+      },
+      {
+        "rol": "usuario",
+        "texto": "en el",
+        "hora": "13:01:04"
+      },
+      {
+        "rol": "agente",
+        "texto": "En el gimnasio de Lobete hay ahora mismo 50 plazas libres, ya que no hay nadie ocupando la sala. El acceso es directo con tu carnet de abonado o código QR.",
+        "hora": "13:01:20"
+      },
+      {
+        "rol": "agente",
+        "texto": "Entendido. ¿Tienes alguna otra consulta o necesitas información sobre alguna otra instalación o",
+        "hora": "13:01:30"
+      }
+    ],
+    "analitica_ia": {
+      "procesado": false,
+      "categoria_principal": "Pendiente de análisis nocturno",
+      "intencion": "",
+      "resuelta": true,
+      "friccion_detectada": false,
+      "tags": []
+    }
+  },
+  {
+    "session_id": "ses_eb130ef63d",
+    "sala": "console",
+    "fecha_inicio": "2026-11-18T13:09:54",
+    "fecha_fin": "2026-11-18T13:10:11",
+    "duracion_seg": 16.4,
+    "abonado_hash": "anonimo",
+    "herramientas_usadas": [],
+    "num_turnos": 1,
+    "dialogo": [
+      {
+        "rol": "agente",
+        "texto": "¡Hola! Bienvenido a Logroño Deporte. Para hacer una consulta sobre tarifas o abonos, pulse o diga 1; para hacer una consulta sobre reservas, anulaciones o código localizador, pulse o",
+        "hora": "13:10:11"
+      }
+    ],
+    "analitica_ia": {
+      "procesado": false,
+      "categoria_principal": "Pendiente de análisis nocturno",
+      "intencion": "",
+      "resuelta": true,
+      "friccion_detectada": false,
+      "tags": []
+    }
+  },
+  {
+    "session_id": "ses_b42bb9336f",
+    "sala": "console",
+    "fecha_inicio": "2026-11-18T13:10:16",
+    "fecha_fin": "2026-11-18T13:11:01",
+    "duracion_seg": 45.1,
+    "abonado_hash": "anonimo",
+    "herramientas_usadas": [],
+    "num_turnos": 0,
+    "dialogo": [],
+    "analitica_ia": {
+      "procesado": false,
+      "categoria_principal": "Pendiente de análisis nocturno",
+      "intencion": "",
+      "resuelta": true,
+      "friccion_detectada": false,
+      "tags": []
+    }
+  },
+  {
+    "session_id": "ses_0ece060b38",
+    "sala": "console",
+    "fecha_inicio": "2026-11-18T13:11:08",
+    "fecha_fin": "2026-11-18T13:12:12",
+    "duracion_seg": 64.3,
+    "abonado_hash": "anonimo",
+    "herramientas_usadas": [],
+    "num_turnos": 3,
+    "dialogo": [
+      {
+        "rol": "agente",
+        "texto": "¡Hola! Bienvenido a Logroño Deporte. Para hacer una consulta sobre tarifas o abonos, pulse o diga 1; para hacer una consulta sobre reservas, anulaciones o código localizador, pulse o diga 2; para hacer una consulta sobre inscripción en actividades o cursos a la carta, pulse o diga 3; para información de instalaciones, aforo de",
+        "hora": "13:11:34"
+      },
+      {
+        "rol": "agente",
+        "texto": "Disculpa, no te he entendido",
+        "hora": "13:11:38"
+      },
+      {
+        "rol": "usuario",
+        "texto": "também",
+        "hora": "13:11:38"
+      }
+    ],
+    "analitica_ia": {
+      "procesado": false,
+      "categoria_principal": "Pendiente de análisis nocturno",
+      "intencion": "",
+      "resuelta": true,
+      "friccion_detectada": false,
+      "tags": []
+    }
+  },
+  {
+    "session_id": "ses_63573418f7",
+    "sala": "console",
+    "fecha_inicio": "2026-11-18T13:14:17",
+    "fecha_fin": "2026-11-18T13:15:38",
+    "duracion_seg": 81.5,
+    "abonado_hash": "anonimo",
+    "herramientas_usadas": [
+      "consultar_web_logrono_deporte"
+    ],
+    "num_turnos": 5,
+    "dialogo": [
+      {
+        "rol": "agente",
+        "texto": "¡Hola! Bienvenido a Logroño Deporte. Para hacer una consulta sobre tarifas o abonos, pulse o diga 1; para hacer una consulta sobre reservas, anulaciones o código localizador, pulse o diga 2; para hacer una consulta sobre inscripción en actividades o cursos a la carta, pulse o diga 3; para información de instalaciones, aforo de gimnasios, balneario o pista de hielo, pulse o diga 4; para trámites, horario de oficinas o cambio de cuenta bancaria, pulse o diga 5; o para una consulta sobre un tema diferente, pulse o diga 6.",
+        "hora": "13:14:57"
+      },
+      {
+        "rol": "usuario",
+        "texto": "uno",
+        "hora": "13:15:17"
+      },
+      {
+        "rol": "agente",
+        "texto": "Perfecto, tarifas y abonos. ¿Qué precio o modalidad quieres consultar: abono anual, familiar, monoparental, social, abono de verano o entradas sueltas?",
+        "hora": "13:15:17"
+      },
+      {
+        "rol": "usuario",
+        "texto": "manual",
+        "hora": "13:15:30"
+      },
+      {
+        "rol": "agente",
+        "texto": "No tengo el precio exacto del abono anual general en este momento. Para",
+        "hora": "13:15:38"
+      }
+    ],
+    "analitica_ia": {
+      "procesado": false,
+      "categoria_principal": "Pendiente de análisis nocturno",
+      "intencion": "",
+      "resuelta": true,
+      "friccion_detectada": false,
+      "tags": []
+    }
+  },
+  {
+    "session_id": "ses_cd43d4fe05",
+    "sala": "console",
+    "fecha_inicio": "2026-11-18T13:16:19",
+    "fecha_fin": "2026-11-18T13:17:08",
+    "duracion_seg": 49.2,
+    "abonado_hash": "anonimo",
+    "herramientas_usadas": [],
+    "num_turnos": 9,
+    "dialogo": [
+      {
+        "rol": "agente",
+        "texto": "¡Hola! Bienvenido a Logroño Deporte. Para hacer una consulta sobre tarifas o abonos, pulse o diga 1; para hacer una consulta sobre",
+        "hora": "13:16:32"
+      },
+      {
+        "rol": "usuario",
+        "texto": "Mhm.",
+        "hora": "13:16:37"
+      },
+      {
+        "rol": "agente",
+        "texto": "...pulse o diga 2; para hacer una consulta sobre",
+        "hora": "13:16:37"
+      },
+      {
+        "rol": "usuario",
+        "texto": "un desayuno",
+        "hora": "13:16:49"
+      },
+      {
+        "rol": "agente",
+        "texto": "Perfecto, tarifas y abonos. ¿Qué precio o modalidad quieres consultar: abono anual, familiar, monoparental, social, abono de",
+        "hora": "13:16:49"
+      },
+      {
+        "rol": "usuario",
+        "texto": "Hello.",
+        "hora": "13:16:57"
+      },
+      {
+        "rol": "agente",
+        "texto": "¡Hola! ¿En qué puedo ayudarte hoy?",
+        "hora": "13:16:57"
+      },
+      {
+        "rol": "usuario",
+        "texto": "on",
+        "hora": "13:17:05"
+      },
+      {
+        "rol": "agente",
+        "texto": "¿Quieres que te repita las opciones del menú o tienes alguna consulta en mente?",
+        "hora": "13:17:05"
+      }
+    ],
+    "analitica_ia": {
+      "procesado": false,
+      "categoria_principal": "Pendiente de análisis nocturno",
+      "intencion": "",
+      "resuelta": true,
+      "friccion_detectada": false,
+      "tags": []
+    }
+  },
+  {
+    "session_id": "ses_d6ac90368c",
+    "sala": "console",
+    "fecha_inicio": "2026-11-18T13:30:11",
+    "fecha_fin": "2026-11-18T13:30:33",
+    "duracion_seg": 22.1,
+    "abonado_hash": "anonimo",
+    "herramientas_usadas": [],
+    "num_turnos": 1,
+    "dialogo": [
+      {
+        "rol": "agente",
+        "texto": "Logroño Deporte. Para tarifas o abonos, diga 1; reservas o localizadores, 2; actividades, 3; instalaciones",
+        "hora": "13:30:33"
+      }
+    ],
+    "analitica_ia": {
+      "procesado": false,
+      "categoria_principal": "Pendiente de análisis nocturno",
+      "intencion": "",
+      "resuelta": true,
+      "friccion_detectada": false,
+      "tags": []
+    }
+  },
+  {
+    "session_id": "ses_fc3e2ba68f",
+    "sala": "console",
+    "fecha_inicio": "2026-11-18T13:33:43",
+    "fecha_fin": "2026-11-18T13:35:01",
+    "duracion_seg": 77.4,
+    "abonado_hash": "anonimo",
+    "herramientas_usadas": [
+      "consultar_web_logrono_deporte"
+    ],
+    "num_turnos": 8,
+    "dialogo": [
+      {
+        "rol": "agente",
+        "texto": "¡Hola! Bienvenido a Logroño Deporte. Para hacer una consulta sobre tarifas o abonos, pulse o diga 1; para hacer una consulta sobre reservas, anulaciones o código localizador, pulse o diga 2; para hacer una consulta sobre inscripción en actividades o cursos a la carta, pulse o diga 3; para información de instalaciones, aforo de gimnasios, balneario o pista de hielo, pulse o diga 4; para trámites, horario de oficinas o cambio de cuenta bancaria, pulse o diga 5; o para una consulta sobre un tema diferente, pulse o diga 6.",
+        "hora": "13:34:21"
+      },
+      {
+        "rol": "agente",
+        "texto": "Perfecto, tarifas y abonos. ¿Qué precio o modalidad quieres consultar: abono anual, familiar,",
+        "hora": "13:34:32"
+      },
+      {
+        "rol": "usuario",
+        "texto": "uno",
+        "hora": "13:34:32"
+      },
+      {
+        "rol": "usuario",
+        "texto": "No, no, no.",
+        "hora": "13:34:38"
+      },
+      {
+        "rol": "agente",
+        "texto": "Entendido. ¿Qué otra consulta tienes o en qué puedo ayudarte hoy?",
+        "hora": "13:34:38"
+      },
+      {
+        "rol": "usuario",
+        "texto": "abono anual",
+        "hora": "13:34:41"
+      },
+      {
+        "rol": "agente",
+        "texto": "No dispongo en este momento de los detalles exactos sobre el abono anual. Por favor, contacta con el teléfono",
+        "hora": "13:34:50"
+      },
+      {
+        "rol": "usuario",
+        "texto": "sobres las ventas para fones, por favor.",
+        "hora": "13:34:56"
+      }
+    ],
+    "analitica_ia": {
+      "procesado": false,
+      "categoria_principal": "Pendiente de análisis nocturno",
+      "intencion": "",
+      "resuelta": true,
+      "friccion_detectada": false,
+      "tags": []
+    }
+  },
+  {
+    "session_id": "ses_8319bf4c9d",
+    "sala": "console",
+    "fecha_inicio": "2026-11-18T13:57:18",
+    "fecha_fin": "2026-11-18T13:58:41",
+    "duracion_seg": 82.9,
+    "abonado_hash": "anonimo",
+    "herramientas_usadas": [
+      "consultar_web_logrono_deporte",
+      "finalizar_llamada"
+    ],
+    "num_turnos": 10,
+    "dialogo": [
+      {
+        "rol": "agente",
+        "texto": "¡Hola! Bienvenido a Logroño Deporte. Para hacer una consulta sobre tarifas o abonos, pulse o diga 1; para hacer una consulta sobre reservas,",
+        "hora": "13:57:30"
+      },
+      {
+        "rol": "usuario",
+        "texto": "uno",
+        "hora": "13:57:40"
+      },
+      {
+        "rol": "agente",
+        "texto": "Perfecto, tarifas y abonos. ¿Qué precio o modalidad quieres consultar: abono anual,",
+        "hora": "13:57:40"
+      },
+      {
+        "rol": "usuario",
+        "texto": "Abono anual",
+        "hora": "13:57:41"
+      },
+      {
+        "rol": "agente",
+        "texto": "El abono anual para adulto empadronado cuesta 120,60 euros. Para menores o mayores de 66 años, el precio es de 80,40 euros, y el abono familiar cuesta 241 euros. ¿Te gustaría conocer alguna otra modalidad o necesitas más detalles?",
+        "hora": "13:58:00"
+      },
+      {
+        "rol": "usuario",
+        "texto": "prolong",
+        "hora": "13:58:04"
+      },
+      {
+        "rol": "agente",
+        "texto": "No dispongo en este momento de los detalles específicos sobre el proceso de renovación del abono anual. Te recomiendo llamar al teléfono oficial de Logroño Deporte, el 941 27 70 55, para que te informen directamente.",
+        "hora": "13:58:21"
+      },
+      {
+        "rol": "usuario",
+        "texto": "adiós",
+        "hora": "13:58:26"
+      },
+      {
+        "rol": "usuario",
+        "texto": "jetzt",
+        "hora": "13:58:33"
+      },
+      {
+        "rol": "agente",
+        "texto": "¡Muchas gracias por contactar con Logroño Deporte! Que tengas un día muy saludable.",
+        "hora": "13:58:33"
+      }
+    ],
+    "analitica_ia": {
+      "procesado": false,
+      "categoria_principal": "Pendiente de análisis nocturno",
+      "intencion": "",
+      "resuelta": true,
+      "friccion_detectada": false,
+      "tags": []
+    }
+  }
+]

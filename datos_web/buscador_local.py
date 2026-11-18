@@ -2,30 +2,38 @@ import re
 from pathlib import Path
 from tools.utils import normalizar_texto
 from datos_web.sincronizar_web import RUTA_CONOCIMIENTO, sincronizar_conocimiento
+from tools.utils import normalizar_texto
+from datos_web.sincronizar_web import RUTA_CONOCIMIENTO, sincronizar_conocimiento
 
 
 def _dividir_en_fragmentos(contenido_md: str) -> list[str]:
-    """Divide cada archivo .md por fuentes ('---') y, si es un PDF largo, por '### Página '."""
+    """Divide cada archivo .md por fuentes ('---') conservando siempre el título principal del archivo."""
+    bloques = [b.strip() for b in contenido_md.split("\n---\n") if b.strip()]
+    if not bloques:
+        return []
+
+    titulo_archivo = bloques[0] if bloques[0].startswith("# ") else ""
+    inicio = 1 if titulo_archivo else 0
+
     fragmentos: list[str] = []
-    for fuente in contenido_md.split("\n---\n"):
-        fuente = fuente.strip()
-        if len(fuente) <= 30 or (fuente.startswith("# ") and "\n" not in fuente):
+    for fuente in bloques[inicio:]:
+        if len(fuente) <= 30:
             continue
 
+        prefijo = f"{titulo_archivo}\n" if titulo_archivo else ""
         if "### Página " in fuente and len(fuente) > 2500:
             partes = fuente.split("### Página ")
             cabecera = partes[0].strip()
             for pag in partes[1:]:
-                fragmentos.append(f"{cabecera}\n### Página {pag.strip()}")
+                fragmentos.append(f"{prefijo}{cabecera}\n### Página {pag.strip()}")
         else:
-            fragmentos.append(fuente)
+            fragmentos.append(f"{prefijo}{fuente}")
     return fragmentos
 
 
 def buscar_en_md_locales(palabras: list[str], raices: list[str]) -> tuple[int, list[str]]:
     """
-    Lee los 5 archivos .md de datos_web/conocimiento/, puntúa sus bloques
-    y devuelve (puntuación_máxima, lista_de_mejores_fragmentos).
+    Lee los 5 archivos .md de datos_web/conocimiento/, puntúa sus bloques y devuelve (puntuación_máxima, lista_de_mejores_fragmentos).
     """
     archivos_md = sorted(RUTA_CONOCIMIENTO.glob("*.md"))
     if not archivos_md:
@@ -41,10 +49,10 @@ def buscar_en_md_locales(palabras: list[str], raices: list[str]) -> tuple[int, l
 
         for frag in _dividir_en_fragmentos(contenido):
             lineas = frag.splitlines()
-            encabezado_norm = normalizar_texto(" ".join(lineas[:2])) if lineas else ""
+            encabezado_norm = normalizar_texto(" ".join(lineas[:3])) if lineas else ""
             cuerpo_norm = normalizar_texto(frag)
 
-            puntos = 4 if "RESUMEN OFICIAL VERIFICADO" in encabezado_norm else 0
+            puntos = 8 if "RESUMEN OFICIAL VERIFICADO" in encabezado_norm else 0
 
             for p in palabras:
                 if p in encabezado_norm:

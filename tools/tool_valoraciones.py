@@ -4,6 +4,7 @@ import logging
 import requests
 import urllib3
 from livekit.agents import function_tool
+from analitica_y_datos.database import guardar_valoracion_db
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 logger = logging.getLogger("tools.valoraciones")
@@ -61,6 +62,7 @@ class ToolValoraciones:
         logger.info(f"[TOOL] registrar_valoracion -> nota={puntuacion}/5 | inst='{instalacion}' | act='{actividad}' | dni_sesion='{dni_sesion}' | comentario='{comentario}'")
         valoracion_url = os.getenv("VALORACION_API_URL", "https://valoracion-api.logronodeporte.es")
 
+        exito = False
         try:
             exito = await asyncio.to_thread(
                 _post_valoracion,
@@ -71,15 +73,26 @@ class ToolValoraciones:
                 actividad,
                 dni_sesion,
             )
-            if exito:
-                logger.info("Valoración guardada en el servidor correctamente.")
-                return (
-                    f"Valoración de {puntuacion} sobre 5 registrada con éxito"
-                    f"{f' para {actividad} en {instalacion}'.strip() if (actividad or instalacion) else ''}. "
-                    "Agradece al usuario su opinión."
-                )
         except Exception as e:
-            logger.warning(f"No se pudo conectar con API Valoraciones ({e}). Confirmando en modo local.")
+                logger.warning(f"No se pudo conectar con API Valoraciones ({e}). Confirmando en modo local.")
+
+        await guardar_valoracion_db(
+            puntuacion=puntuacion,
+            comentario=comentario,
+            instalacion=instalacion,
+            actividad=actividad,
+            dni=dni_sesion,
+            enviada_api_oficial=exito,
+        )
+
+        if exito:
+            logger.info("Valoración guardada en el servidor correctamente.")
+            return (
+                f"Valoración de {puntuacion} sobre 5 registrada con éxito"
+                f"{f' para {actividad} en {instalacion}'.strip() if (actividad or instalacion) else ''}. "
+                "Agradece al usuario su opinión."
+            )
+        
 
         return (
             f"Valoración registrada correctamente (puntuación: {puntuacion}/5"

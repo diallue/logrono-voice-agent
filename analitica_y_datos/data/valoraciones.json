@@ -1,0 +1,22 @@
+[
+  {
+    "valoracion_id": "val_9e592442",
+    "fecha": "2026-11-18T12:31:57",
+    "puntuacion": 5,
+    "comentario": "Todo genial con mi DNI [DNI_PROTEGIDO]",
+    "instalacion": "C.D.M. Lobete",
+    "actividad": "Pilates",
+    "abonado_hash": "abo_567ea22e34",
+    "enviada_api_oficial": false
+  },
+  {
+    "valoracion_id": "val_6d7fd15e",
+    "fecha": "2026-11-18T12:42:21",
+    "puntuacion": 4,
+    "comentario": "Las duchas de Las Gaunas tenian poca presion, mi movil es [TELEFONO_PROTEGIDO]",
+    "instalacion": "C.D.M. Las Gaunas",
+    "actividad": "Aerocombat",
+    "abonado_hash": "abo_a1a4571673",
+    "enviada_api_oficial": false
+  }
+]

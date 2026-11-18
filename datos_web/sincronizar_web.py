@@ -13,7 +13,6 @@ from datos_web.conversor_md import html_a_markdown
 from datos_web.procesador_archivos import procesar_archivo_binario
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger("sincronizar_web")
 
 RUTA_DATOS_WEB = Path(__file__).resolve().parent
