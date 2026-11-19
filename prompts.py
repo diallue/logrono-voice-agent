@@ -13,7 +13,7 @@ GREETING_MESSAGE = (
     "para hacer una consulta sobre reservas, anulaciones o código localizador, pulse o diga 2; "
     "para hacer una consulta sobre inscripción en actividades o cursos a la carta, pulse o diga 3; "
     "para información de instalaciones, aforo de gimnasios, balneario o pista de hielo, pulse o diga 4; "
-    "para trámites, horario de oficinas o cambio de cuenta bancaria, pulse o diga 5; "
+    "para información sobre trámites, horario de oficinas o cambio de cuenta bancaria, pulse o diga 5; "
     "o para una consulta sobre un tema diferente, pulse o diga 6."
 )
 

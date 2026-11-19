@@ -46,7 +46,7 @@ def _transcribir_con_gemini(contenido_bytes: bytes, mime_type: str, origen: str)
     try:
         cliente = genai.Client(api_key=api_key)
         respuesta = cliente.models.generate_content(
-            model="gemini-2.5-flash",
+            model="gemini-3.8-flash",
             contents=[
                 types.Part.from_bytes(data=contenido_bytes, mime_type=mime_type),
                 prompt,

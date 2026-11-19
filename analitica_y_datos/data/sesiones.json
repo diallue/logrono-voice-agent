@@ -23,12 +23,14 @@
       }
     ],
     "analitica_ia": {
-      "procesado": false,
-      "categoria_principal": "Pendiente de análisis nocturno",
-      "intencion": "",
+      "procesado": true,
+      "categoria_principal": "Cursos por DNI y Valoraciones",
+      "intencion": "Consulta telefónica sobre cursos por dni y valoraciones",
       "resuelta": true,
       "friccion_detectada": false,
-      "tags": []
+      "tags": [
+        "cursos"
+      ]
     }
   },
   {
@@ -48,12 +50,14 @@
       }
     ],
     "analitica_ia": {
-      "procesado": false,
-      "categoria_principal": "Pendiente de análisis nocturno",
-      "intencion": "",
-      "resuelta": true,
+      "procesado": true,
+      "categoria_principal": "Llamada sin consulta",
+      "intencion": "El usuario colgó durante el saludo inicial.",
+      "resuelta": false,
       "friccion_detectada": false,
-      "tags": []
+      "tags": [
+        "abandono_inicial"
+      ]
     }
   },
   {
@@ -100,12 +104,14 @@
       }
     ],
     "analitica_ia": {
-      "procesado": false,
-      "categoria_principal": "Pendiente de análisis nocturno",
-      "intencion": "",
+      "procesado": true,
+      "categoria_principal": "Instalaciones y Aforos",
+      "intencion": "Consulta telefónica sobre instalaciones y aforos",
       "resuelta": true,
       "friccion_detectada": false,
-      "tags": []
+      "tags": [
+        "instalaciones"
+      ]
     }
   },
   {
@@ -125,12 +131,14 @@
       }
     ],
     "analitica_ia": {
-      "procesado": false,
-      "categoria_principal": "Pendiente de análisis nocturno",
-      "intencion": "",
-      "resuelta": true,
+      "procesado": true,
+      "categoria_principal": "Llamada sin consulta",
+      "intencion": "El usuario colgó durante el saludo inicial.",
+      "resuelta": false,
       "friccion_detectada": false,
-      "tags": []
+      "tags": [
+        "abandono_inicial"
+      ]
     }
   },
   {
@@ -144,12 +152,14 @@
     "num_turnos": 0,
     "dialogo": [],
     "analitica_ia": {
-      "procesado": false,
-      "categoria_principal": "Pendiente de análisis nocturno",
-      "intencion": "",
-      "resuelta": true,
+      "procesado": true,
+      "categoria_principal": "Llamada sin consulta",
+      "intencion": "El usuario colgó durante el saludo inicial.",
+      "resuelta": false,
       "friccion_detectada": false,
-      "tags": []
+      "tags": [
+        "abandono_inicial"
+      ]
     }
   },
   {
@@ -179,12 +189,14 @@
       }
     ],
     "analitica_ia": {
-      "procesado": false,
-      "categoria_principal": "Pendiente de análisis nocturno",
-      "intencion": "",
+      "procesado": true,
+      "categoria_principal": "Tarifas y Abonos",
+      "intencion": "Consulta telefónica sobre tarifas y abonos",
       "resuelta": true,
       "friccion_detectada": false,
-      "tags": []
+      "tags": [
+        "tarifas"
+      ]
     }
   },
   {
@@ -226,12 +238,14 @@
       }
     ],
     "analitica_ia": {
-      "procesado": false,
-      "categoria_principal": "Pendiente de análisis nocturno",
-      "intencion": "",
+      "procesado": true,
+      "categoria_principal": "Tarifas y Abonos",
+      "intencion": "Consulta telefónica sobre tarifas y abonos",
       "resuelta": true,
       "friccion_detectada": false,
-      "tags": []
+      "tags": [
+        "tarifas"
+      ]
     }
   },
   {
@@ -291,12 +305,14 @@
       }
     ],
     "analitica_ia": {
-      "procesado": false,
-      "categoria_principal": "Pendiente de análisis nocturno",
-      "intencion": "",
+      "procesado": true,
+      "categoria_principal": "Tarifas y Abonos",
+      "intencion": "Consulta telefónica sobre tarifas y abonos",
       "resuelta": true,
       "friccion_detectada": false,
-      "tags": []
+      "tags": [
+        "tarifas"
+      ]
     }
   },
   {
@@ -316,12 +332,14 @@
       }
     ],
     "analitica_ia": {
-      "procesado": false,
-      "categoria_principal": "Pendiente de análisis nocturno",
-      "intencion": "",
-      "resuelta": true,
+      "procesado": true,
+      "categoria_principal": "Llamada sin consulta",
+      "intencion": "El usuario colgó durante el saludo inicial.",
+      "resuelta": false,
       "friccion_detectada": false,
-      "tags": []
+      "tags": [
+        "abandono_inicial"
+      ]
     }
   },
   {
@@ -378,12 +396,14 @@
       }
     ],
     "analitica_ia": {
-      "procesado": false,
-      "categoria_principal": "Pendiente de análisis nocturno",
-      "intencion": "",
-      "resuelta": true,
-      "friccion_detectada": false,
-      "tags": []
+      "procesado": true,
+      "categoria_principal": "Tarifas y Abonos",
+      "intencion": "Consulta telefónica sobre tarifas y abonos",
+      "resuelta": false,
+      "friccion_detectada": true,
+      "tags": [
+        "tarifas"
+      ]
     }
   },
   {
@@ -451,12 +471,14 @@
       }
     ],
     "analitica_ia": {
-      "procesado": false,
-      "categoria_principal": "Pendiente de análisis nocturno",
-      "intencion": "",
-      "resuelta": true,
+      "procesado": true,
+      "categoria_principal": "Tarifas y Abonos",
+      "intencion": "Consulta telefónica sobre tarifas y abonos",
+      "resuelta": false,
       "friccion_detectada": false,
-      "tags": []
+      "tags": [
+        "tarifas"
+      ]
     }
   }
 ]

@@ -39,7 +39,7 @@ def _guardar_en_json_local(ruta: Path, documento: dict) -> None:
 
     registros = _leer_json_local(ruta)
 
-    doc_copia = {clave: valor for clave, valor in documento.items() if clave != "id"}
+    doc_copia = {clave: valor for clave, valor in documento.items() if clave != "_id"}
 
     registros.append(doc_copia)
     texto_json = json.dumps(registros, ensure_ascii=False, indent=2)
@@ -48,16 +48,16 @@ def _guardar_en_json_local(ruta: Path, documento: dict) -> None:
 def _obtener_coleccion_mongo(nombre_coleccion: str):
     global _CLIENTE_MONGO
 
-    uri = os.getenv("MONGO_URI", "").strip()
-    if not uri or ".xxxxx."in uri or AsyncIOMotorClient is None:
+    uri = os.getenv("MONGODB_URI", "").strip()
+    if not uri or " .xxxxx. "in uri or AsyncIOMotorClient is None:
         logger.warning("No se ha configurado una URI válida de MongoDB. Se usarán archivos JSON locales.")
         return None
 
     try:
         if _CLIENTE_MONGO is None:
-            _CLIENTE_MONGO = AsyncIOMotorClient(uri)
+            _CLIENTE_MONGO = AsyncIOMotorClient(uri, serverSelectionTimeoutMS=2500)
 
-        return _CLIENTE_MONGO["logrono_deporte"][nombre_coleccion]
+        return _CLIENTE_MONGO["logrono_deporte_db"][nombre_coleccion]
     except Exception as e:
         logger.error(f"Error al conectar con MongoDB: {e}")
         return None
