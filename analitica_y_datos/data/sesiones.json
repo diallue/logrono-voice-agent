@@ -107,14 +107,17 @@
       }
     ],
     "analitica_ia": {
-      "procesado": true,
       "categoria_principal": "Instalaciones y Aforos",
-      "intencion": "Consulta telefónica sobre instalaciones y aforos",
+      "intencion": "Consultar la ocupación o aforo actual del gimnasio de Lobete.",
       "resuelta": true,
       "friccion_detectada": false,
       "tags": [
-        "instalaciones"
-      ]
+        "aforo",
+        "ocupacion",
+        "gimnasio",
+        "lobete"
+      ],
+      "procesado": true
     }
   },
   {
