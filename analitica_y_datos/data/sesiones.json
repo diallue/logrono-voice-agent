@@ -23,14 +23,17 @@
       }
     ],
     "analitica_ia": {
-      "procesado": true,
       "categoria_principal": "Cursos por DNI y Valoraciones",
-      "intencion": "Consulta telefónica sobre cursos por dni y valoraciones",
+      "intencion": "Consultar los cursos asociados a su DNI.",
       "resuelta": true,
       "friccion_detectada": false,
       "tags": [
-        "cursos"
-      ]
+        "cursos",
+        "dni",
+        "pilates",
+        "lobete"
+      ],
+      "procesado": true
     }
   },
   {

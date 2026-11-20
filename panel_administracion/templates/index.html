@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logroño Deporte · Panel del Asistente de Voz</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23B8292F'/><text x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' fill='white' font-family='sans-serif' font-weight='700' font-size='15'>LD</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+
+  <style>
+    :root {
+      --bg-canvas: #F6F5F1;
+      --bg-surface: #FFFFFF;
+      --bg-subtle: #EFECE5;
+      --border: #E2E0D8;
+      --border-strong: #CCC9BE;
+
+      --ink-primary: #161A1D;
+      --ink-secondary: #5A626A;
+      --ink-muted: #7C848C;
+
+      --accent: #B8292F;
+      --accent-hover: #961F24;
+      --accent-soft: #FDF2F2;
+
+      --status-ok: #1E7A4C;
+      --status-ok-bg: #ECF7F1;
+      --status-warn: #B45309;
+      --status-warn-bg: #FEF6E7;
+      --status-err: #B8292F;
+      --status-err-bg: #FDECEC;
+
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 20px;
+      --space-6: 24px;
+      --space-8: 32px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-canvas);
+      color: var(--ink-primary);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* --- Cabecera fija --- */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: var(--radius-sm);
+      background: var(--accent);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .brand-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink-primary);
+      line-height: 1.2;
+    }
+
+    .brand-sub {
+      font-size: 12px;
+      color: var(--ink-secondary);
+    }
+
+    .nav-tabs {
+      display: flex;
+      align-items: center;
+      gap: var(--space-1);
+      overflow-x: auto;
+    }
+
+    .nav-tab {
+      appearance: none;
+      border: none;
+      background: transparent;
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--ink-secondary);
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 180ms ease, color 180ms ease;
+    }
+
+    .nav-tab:hover {
+      background: var(--bg-subtle);
+      color: var(--ink-primary);
+    }
+
+    .nav-tab.active {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .nav-tab:focus-visible,
+    .btn:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* --- Contenedor principal --- */
+    .shell {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: var(--space-6);
+    }
+
+    .view { display: none; }
+    .view.active { display: block; }
+
+    .view-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: var(--space-4);
+      margin-bottom: var(--space-6);
+      flex-wrap: wrap;
+    }
+
+    .view-title {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--ink-primary);
+    }
+
+    .view-desc {
+      font-size: 14px;
+      color: var(--ink-secondary);
+      margin-top: 2px;
+      max-width: 68ch;
+    }
+
+    .actions-row {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+    }
+
+    /* --- Botones --- */
+    .btn {
+      appearance: none;
+      border: 1px solid var(--border-strong);
+      background: var(--bg-surface);
+      color: var(--ink-primary);
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 9px 14px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
+    }
+
+    .btn:hover:not(:disabled) {
+      background: var(--bg-subtle);
+      border-color: var(--ink-secondary);
+    }
+
+    .btn:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #FFFFFF;
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
+    }
+
+    /* --- Tarjetas y Grids --- */
+    .panel {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: var(--space-5);
+    }
+
+    .panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+
+    .panel-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink-primary);
+    }
+
+    .panel-meta {
+      font-size: 12px;
+      color: var(--ink-muted);
+      font-family: var(--font-mono);
+    }
+
+    /* Hero KPI + Banda de métricas */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 2fr;
+      gap: var(--space-4);
+      margin-bottom: var(--space-5);
+    }
+
+    .hero-kpi {
+      background: var(--ink-primary);
+      color: #FFFFFF;
+      border-radius: var(--radius-md);
+      padding: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: var(--space-4);
+    }
+
+    .hero-label {
+      font-size: 13px;
+      color: #C7CDD4;
+      font-weight: 500;
+    }
+
+    .hero-value {
+      font-family: var(--font-mono);
+      font-size: 42px;
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-top: var(--space-2);
+    }
+
+    .hero-bar {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.16);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: var(--space-3);
+    }
+
+    .hero-bar-fill {
+      height: 100%;
+      background: #4ADE80;
+      width: 0%;
+      transition: width 300ms ease;
+    }
+
+    .hero-foot {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-3);
+      font-size: 12.5px;
+      color: #C7CDD4;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      padding-top: var(--space-3);
+    }
+
+    .metrics-strip {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-4);
+    }
+
+    .metric-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: var(--space-5);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: var(--space-2);
+    }
+
+    .metric-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink-secondary);
+    }
+
+    .metric-value {
+      font-family: var(--font-mono);
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--ink-primary);
+      letter-spacing: -0.02em;
+    }
+
+    .metric-note {
+      font-size: 12.5px;
+      color: var(--ink-muted);
+    }
+
+    /* Grid de gráficas asimétrico 7 / 5 */
+    .charts-grid {
+      display: grid;
+      grid-template-columns: 7fr 5fr;
+      gap: var(--space-4);
+      margin-bottom: var(--space-5);
+    }
+
+    .chart-box {
+      width: 100%;
+      height: 290px;
+    }
+
+    /* Tabla de herramientas */
+    .tools-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: var(--space-3);
+    }
+
+    .tool-row {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: var(--space-3) var(--space-4);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg-canvas);
+    }
+
+    .tool-name {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      color: var(--ink-primary);
+    }
+
+    .tool-count {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* --- Badges y Pills --- */
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .pill-ok { background: var(--status-ok-bg); color: var(--status-ok); }
+    .pill-warn { background: var(--status-warn-bg); color: var(--status-warn); }
+    .pill-err { background: var(--status-err-bg); color: var(--status-err); }
+    .pill-neutral { background: var(--bg-subtle); color: var(--ink-secondary); }
+
+    .rgpd-mask {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      background: var(--status-warn-bg);
+      color: var(--status-warn);
+      border: 1px solid #F3D9A4;
+      padding: 1px 5px;
+      border-radius: 4px;
+    }
+
+    /* --- Vista Llamadas (Maestro-Detalle) --- */
+    .filters-bar {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-4);
+      padding: var(--space-3) var(--space-4);
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+    }
+
+    .filters-bar select {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      padding: 7px 10px;
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-sm);
+      background: var(--bg-surface);
+      color: var(--ink-primary);
+    }
+
+    .check-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--ink-secondary);
+      cursor: pointer;
+    }
+
+    .split-layout {
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      gap: var(--space-4);
+      align-items: start;
+    }
+
+    .session-list {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      max-height: 660px;
+      overflow-y: auto;
+    }
+
+    .session-item {
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border);
+      padding: var(--space-4);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-family: var(--font-sans);
+      transition: background 150ms ease;
+    }
+
+    .session-item:last-child { border-bottom: none; }
+    .session-item:hover { background: var(--bg-canvas); }
+    .session-item.selected {
+      background: var(--accent-soft);
+      box-shadow: inset 3px 0 0 var(--accent);
+    }
+
+    .session-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    .session-id {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ink-primary);
+    }
+
+    .session-date {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--ink-muted);
+    }
+
+    .session-intent {
+      font-size: 13px;
+      color: var(--ink-secondary);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .session-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 2px;
+    }
+
+    .detail-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: var(--space-5);
+      min-height: 460px;
+    }
+
+    .detail-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: var(--space-3);
+      padding: var(--space-3) var(--space-4);
+      background: var(--bg-canvas);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: var(--space-5);
+    }
+
+    .detail-meta-label {
+      font-size: 11.5px;
+      color: var(--ink-muted);
+    }
+
+    .detail-meta-val {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink-primary);
+    }
+
+    .transcript {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .turn {
+      padding: var(--space-3) var(--space-4);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      max-width: 78ch;
+    }
+
+    .turn-usuario {
+      background: var(--bg-surface);
+      border-left: 3px solid var(--accent);
+      align-self: flex-end;
+      width: 92%;
+    }
+
+    .turn-agente {
+      background: var(--bg-canvas);
+      border-left: 3px solid var(--ink-primary);
+      align-self: flex-start;
+      width: 92%;
+    }
+
+    .turn-head {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11.5px;
+      color: var(--ink-muted);
+      margin-bottom: 4px;
+      font-family: var(--font-mono);
+    }
+
+    .turn-text {
+      font-size: 14px;
+      color: var(--ink-primary);
+      white-space: pre-wrap;
+    }
+
+    /* --- Tabla de Valoraciones --- */
+    .table-wrap {
+      overflow-x: auto;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+    }
+
+    th {
+      text-align: left;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ink-secondary);
+      background: var(--bg-canvas);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 16px;
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    .score-chip {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: 13px;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+    }
+
+    /* --- Editor Markdown --- */
+    .kb-layout {
+      display: grid;
+      grid-template-columns: 310px 1fr;
+      gap: var(--space-4);
+      align-items: start;
+    }
+
+    .kb-item {
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border);
+      padding: 14px 16px;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      transition: background 150ms ease;
+    }
+
+    .kb-item:last-child { border-bottom: none; }
+    .kb-item:hover { background: var(--bg-canvas); }
+    .kb-item.selected {
+      background: var(--accent-soft);
+      box-shadow: inset 3px 0 0 var(--accent);
+    }
+
+    .kb-filename {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--ink-primary);
+      word-break: break-all;
+    }
+
+    .kb-meta {
+      font-size: 11.5px;
+      color: var(--ink-muted);
+      margin-top: 4px;
+      font-family: var(--font-mono);
+    }
+
+    .md-editor {
+      width: 100%;
+      min-height: 520px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      line-height: 1.6;
+      padding: var(--space-4);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-sm);
+      background: var(--bg-canvas);
+      color: var(--ink-primary);
+      resize: vertical;
+    }
+
+    .empty-state {
+      padding: var(--space-8) var(--space-5);
+      text-align: center;
+      color: var(--ink-secondary);
+      font-size: 14px;
+    }
+
+    /* --- Toast de notificaciones --- */
+    .toast {
+      position: fixed;
+      right: var(--space-6);
+      bottom: var(--space-6);
+      z-index: 50;
+      background: var(--ink-primary);
+      color: #FFFFFF;
+      padding: 12px 18px;
+      border-radius: var(--radius-sm);
+      font-size: 13.5px;
+      font-weight: 500;
+      box-shadow: 0 10px 25px rgba(22, 26, 29, 0.18);
+      opacity: 0;
+      transform: translateY(8px);
+      pointer-events: none;
+      transition: opacity 200ms ease, transform 200ms ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 1024px) {
+      .kpi-grid,
+      .charts-grid,
+      .split-layout,
+      .kb-layout {
+        grid-template-columns: 1fr;
+      }
+      .session-list { max-height: 360px; }
+    }
+
+    @media (max-width: 640px) {
+      .shell { padding: var(--space-4); }
+      .topbar-inner { padding: var(--space-2) var(--space-4); }
+      .metrics-strip { grid-template-columns: 1fr; }
+      .view-title { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-mark">LD</div>
+        <div>
+          <div class="brand-title">Logroño Deporte</div>
+          <div class="brand-sub">Observabilidad y gestión del asistente de voz</div>
+        </div>
+      </div>
+
+      <nav class="nav-tabs" role="tablist" aria-label="Secciones del panel">
+        <button class="nav-tab active" data-view="resumen" role="tab" aria-selected="true">Resumen y KPIs</button>
+        <button class="nav-tab" data-view="llamadas" role="tab" aria-selected="false">Llamadas</button>
+        <button class="nav-tab" data-view="valoraciones" role="tab" aria-selected="false">Valoraciones</button>
+        <button class="nav-tab" data-view="conocimiento" role="tab" aria-selected="false">Base de conocimiento</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <!-- VISTA 1: RESUMEN Y KPIS -->
+    <section id="view-resumen" class="view active">
+      <div class="view-header">
+        <div>
+          <h1 class="view-title">Estado del servicio telefónico</h1>
+          <p class="view-desc">Indicadores de resolución, temas más consultados y satisfacción ciudadana con anonimización RGPD aplicada.</p>
+        </div>
+        <div class="actions-row">
+          <button id="btn-batch" class="btn btn-primary" onclick="ejecutarAnalitica(false)">Analizar llamadas pendientes</button>
+          <button id="btn-batch-force" class="btn" onclick="ejecutarAnalitica(true)">Reprocesar todo con IA</button>
+        </div>
+      </div>
+
+      <div class="kpi-grid">
+        <article class="hero-kpi">
+          <div>
+            <div class="hero-label">Tasa de resolución (llamadas con consulta)</div>
+            <div id="kpi-resolucion" class="hero-value">--%</div>
+            <div class="hero-bar"><div id="kpi-resolucion-bar" class="hero-bar-fill"></div></div>
+          </div>
+          <div class="hero-foot">
+            <span id="kpi-consultas">0 consultas efectivas</span>
+            <span id="kpi-abandonos">0 abandonos en saludo</span>
+          </div>
+        </article>
+
+        <div class="metrics-strip">
+          <article class="metric-card">
+            <span class="metric-label">Llamadas registradas</span>
+            <span id="kpi-total" class="metric-value">0</span>
+            <span id="kpi-pendientes" class="metric-note">0 pendientes de análisis</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">Duración media</span>
+            <span id="kpi-duracion" class="metric-value">0 s</span>
+            <span class="metric-note">Promedio por sesión de voz</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">Satisfacción ciudadana</span>
+            <span id="kpi-nota" class="metric-value">-- / 5</span>
+            <span id="kpi-total-val" class="metric-note">0 encuestas recibidas</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">Fricciones detectadas</span>
+            <span id="kpi-friccion" class="metric-value">0</span>
+            <span class="metric-note">Correcciones de DNI o voz</span>
+          </article>
+        </div>
+      </div>
+
+      <div class="charts-grid">
+        <div class="panel">
+          <div class="panel-head">
+            <h2 class="panel-title">Distribución por tema consultado</h2>
+            <span class="panel-meta">Clasificación Gemini Flash</span>
+          </div>
+          <div id="chart-categorias" class="chart-box"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h2 class="panel-title">Satisfacción por instalación</h2>
+            <span class="panel-meta">Escala 1 a 5</span>
+          </div>
+          <div id="chart-satisfaccion" class="chart-box"></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2 class="panel-title">Herramientas invocadas por el agente</h2>
+          <span class="panel-meta">Function Calling en vivo</span>
+        </div>
+        <div id="tools-grid" class="tools-list"></div>
+      </div>
+    </section>
+
+    <!-- VISTA 2: LLAMADAS ANONIMIZADAS -->
+    <section id="view-llamadas" class="view">
+      <div class="view-header">
+        <div>
+          <h1 class="view-title">Registro de llamadas anonimizadas</h1>
+          <p class="view-desc">Transcripciones depuradas bajo RGPD: los DNIs, teléfonos y correos personales se sustituyen automáticamente antes de guardarse.</p>
+        </div>
+      </div>
+
+      <div class="filters-bar">
+        <select id="filtro-categoria" onchange="cargarSesiones()">
+          <option value="">Todas las categorías</option>
+          <option value="Tarifas y Abonos">Tarifas y Abonos</option>
+          <option value="Reservas y Localizador">Reservas y Localizador</option>
+          <option value="Actividades e Inscripciones">Actividades e Inscripciones</option>
+          <option value="Instalaciones y Aforos">Instalaciones y Aforos</option>
+          <option value="Trámites y Oficinas">Trámites y Oficinas</option>
+          <option value="Cursos por DNI y Valoraciones">Cursos por DNI y Valoraciones</option>
+          <option value="Llamada sin consulta">Llamada sin consulta</option>
+        </select>
+
+        <label class="check-label">
+          <input type="checkbox" id="filtro-friccion" onchange="cargarSesiones()" />
+          Solo con fricción detectada
+        </label>
+
+        <label class="check-label">
+          <input type="checkbox" id="filtro-no-resueltas" onchange="cargarSesiones()" />
+          Solo no resueltas
+        </label>
+      </div>
+
+      <div class="split-layout">
+        <div id="lista-sesiones" class="session-list"></div>
+        <div id="detalle-sesion" class="detail-box">
+          <div class="empty-state">Selecciona una llamada de la lista para inspeccionar su transcripción anonimizada y el diagnóstico de la IA.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISTA 3: VALORACIONES -->
+    <section id="view-valoraciones" class="view">
+      <div class="view-header">
+        <div>
+          <h1 class="view-title">Encuestas de satisfacción ciudadana</h1>
+          <p class="view-desc">Opiniones recogidas por voz al finalizar las consultas, vinculadas a la huella anónima del abonado cuando se verificó su DNI.</p>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Nota</th>
+              <th>Instalación / Actividad</th>
+              <th>Comentario (RGPD)</th>
+              <th>Abonado (Hash)</th>
+              <th>API oficial</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-valoraciones"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- VISTA 4: BASE DE CONOCIMIENTO (.md) -->
+    <section id="view-conocimiento" class="view">
+      <div class="view-header">
+        <div>
+          <h1 class="view-title">Base de conocimiento local (Markdown)</h1>
+          <p class="view-desc">Edita directamente los 5 archivos temáticos que el agente consulta en menos de 1 ms o sincronízalos de nuevo desde logronodeporte.es.</p>
+        </div>
+        <div class="actions-row">
+          <button id="btn-sync-web" class="btn" onclick="sincronizarWeb()">Sincronizar desde logronodeporte.es</button>
+        </div>
+      </div>
+
+      <div class="kb-layout">
+        <div id="lista-md" class="session-list"></div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <h2 id="editor-titulo" class="panel-title">Selecciona un archivo Markdown</h2>
+              <span id="editor-estado" class="panel-meta">Sin archivo abierto</span>
+            </div>
+            <button id="btn-guardar-md" class="btn btn-primary" onclick="guardarArchivoMd()" disabled>Guardar cambios</button>
+          </div>
+          <textarea id="editor-md" class="md-editor" placeholder="El contenido del archivo seleccionado aparecerá aquí..." disabled></textarea>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const estado = {
+      sesiones: [],
+      sesionActivaId: null,
+      archivoMdActivo: null,
+      mdSinGuardar: false,
+    };
+
+    function escapeHtml(str) {
+      return String(str ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function resaltarRgpd(texto) {
+      return escapeHtml(texto).replace(
+        /\[(DNI_PROTEGIDO|TELEFONO_PROTEGIDO|EMAIL_PROTEGIDO)\]/g,
+        '<span class="rgpd-mask">[$1]</span>'
+      );
+    }
+
+    function formatearFecha(iso) {
+      if (!iso) return '—';
+      return iso.replace('T', ' ').slice(0, 16);
+    }
+
+    function mostrarToast(mensaje) {
+      const el = document.getElementById('toast');
+      el.textContent = mensaje;
+      el.classList.add('show');
+      clearTimeout(el._timer);
+      el._timer = setTimeout(() => el.classList.remove('show'), 3600);
+    }
+
+    /* --- Navegación por pestañas --- */
+    document.querySelectorAll('.nav-tab').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const vista = btn.dataset.view;
+        document.querySelectorAll('.nav-tab').forEach((b) => {
+          b.classList.toggle('active', b === btn);
+          b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+        });
+        document.querySelectorAll('.view').forEach((v) => {
+          v.classList.toggle('active', v.id === `view-${vista}`);
+        });
+
+        if (vista === 'resumen') cargarResumen();
+        if (vista === 'llamadas') cargarSesiones();
+        if (vista === 'valoraciones') cargarValoraciones();
+        if (vista === 'conocimiento') cargarArchivosMd();
+      });
+    });
+
+    /* --- VISTA 1: RESUMEN Y GRÁFICAS --- */
+    async function cargarResumen() {
+      const res = await fetch('/api/resumen');
+      const data = await res.json();
+      const k = data.kpis;
+
+      document.getElementById('kpi-resolucion').textContent = `${k.tasa_resolucion}%`;
+      document.getElementById('kpi-resolucion-bar').style.width = `${Math.min(k.tasa_resolucion, 100)}%`;
+      document.getElementById('kpi-consultas').textContent = `${k.llamadas_con_consulta} consultas efectivas`;
+      document.getElementById('kpi-abandonos').textContent = `${k.abandonos_iniciales} abandonos en saludo`;
+
+      document.getElementById('kpi-total').textContent = k.total_llamadas;
+      document.getElementById('kpi-pendientes').textContent = `${k.pendientes_analisis} pendientes de análisis`;
+      document.getElementById('kpi-duracion').textContent = `${k.duracion_media_seg} s`;
+      document.getElementById('kpi-nota').textContent = k.total_valoraciones ? `${k.nota_media} / 5` : '— / 5';
+      document.getElementById('kpi-total-val').textContent = `${k.total_valoraciones} encuestas recibidas`;
+      document.getElementById('kpi-friccion').textContent = k.llamadas_con_friccion;
+
+      // Gráfica 1: Categorías (Highcharts)
+      Highcharts.chart('chart-categorias', {
+        chart: { type: 'bar', backgroundColor: 'transparent', style: { fontFamily: 'Plus Jakarta Sans, sans-serif' } },
+        title: { text: null },
+        xAxis: {
+          categories: data.por_categoria.map((c) => c.categoria),
+          lineColor: '#E2E0D8',
+          labels: { style: { color: '#161A1D', fontSize: '12px' } }
+        },
+        yAxis: {
+          min: 0,
+          allowDecimals: false,
+          title: { text: null },
+          gridLineColor: '#EFECE5'
+        },
+        legend: { enabled: false },
+        credits: { enabled: false },
+        plotOptions: {
+          bar: {
+            borderRadius: 4,
+            color: '#B8292F',
+            dataLabels: { enabled: true, style: { fontFamily: 'IBM Plex Mono, monospace', fontWeight: '600', textOutline: 'none' } }
+          }
+        },
+        series: [{ name: 'Llamadas', data: data.por_categoria.map((c) => c.total) }]
+      });
+
+      // Gráfica 2: Satisfacción por instalación (Highcharts)
+      const sat = data.satisfaccion_instalaciones;
+      if (sat.length === 0) {
+        document.getElementById('chart-satisfaccion').innerHTML = '<div class="empty-state">Aún no hay valoraciones registradas por instalación.</div>';
+      } else {
+        Highcharts.chart('chart-satisfaccion', {
+          chart: { type: 'column', backgroundColor: 'transparent', style: { fontFamily: 'Plus Jakarta Sans, sans-serif' } },
+          title: { text: null },
+          xAxis: {
+            categories: sat.map((s) => s.instalacion),
+            lineColor: '#E2E0D8',
+            labels: { style: { color: '#161A1D', fontSize: '12px' } }
+          },
+          yAxis: {
+            min: 0,
+            max: 5,
+            tickInterval: 1,
+            title: { text: 'Nota media' },
+            gridLineColor: '#EFECE5'
+          },
+          legend: { enabled: false },
+          credits: { enabled: false },
+          tooltip: {
+            pointFormat: 'Nota media: <b>{point.y}/5</b>'
+          },
+          plotOptions: {
+            column: {
+              borderRadius: 4,
+              color: '#1E7A4C',
+              dataLabels: { enabled: true, format: '{y}/5', style: { fontFamily: 'IBM Plex Mono, monospace', fontWeight: '600', textOutline: 'none' } }
+            }
+          },
+          series: [{ name: 'Nota media', data: sat.map((s) => s.media) }]
+        });
+      }
+
+      // Herramientas usadas
+      const toolsEl = document.getElementById('tools-grid');
+      if (!data.herramientas_mas_usadas.length) {
+        toolsEl.innerHTML = '<div class="empty-state">Todavía no se han invocado herramientas en las llamadas registradas.</div>';
+      } else {
+        toolsEl.innerHTML = data.herramientas_mas_usadas
+          .map((h) => `
+            <div class="tool-row">
+              <span class="tool-name">${escapeHtml(h.herramienta)}</span>
+              <span class="tool-count">${h.usos} ${h.usos === 1 ? 'uso' : 'usos'}</span>
+            </div>
+          `)
+          .join('');
+      }
+    }
+
+    async function ejecutarAnalitica(forzar) {
+      const btn = document.getElementById(forzar ? 'btn-batch-force' : 'btn-batch');
+      const textoOriginal = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Analizando...';
+      try {
+        const res = await fetch(`/api/analitica/ejecutar?forzar=${forzar}`, { method: 'POST' });
+        const data = await res.json();
+        mostrarToast(data.mensaje || 'Análisis completado.');
+        await cargarResumen();
+      } catch (err) {
+        mostrarToast('No se pudo ejecutar el análisis. Revisa la consola del servidor.');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = textoOriginal;
+      }
+    }
+
+    /* --- VISTA 2: LLAMADAS --- */
+    async function cargarSesiones() {
+      const cat = document.getElementById('filtro-categoria').value;
+      const fric = document.getElementById('filtro-friccion').checked;
+      const noRes = document.getElementById('filtro-no-resueltas').checked;
+
+      const params = new URLSearchParams();
+      if (cat) params.set('categoria', cat);
+      if (fric) params.set('solo_friccion', 'true');
+      if (noRes) params.set('solo_no_resueltas', 'true');
+
+      const res = await fetch(`/api/sesiones?${params.toString()}`);
+      estado.sesiones = await res.json();
+
+      const lista = document.getElementById('lista-sesiones');
+      if (!estado.sesiones.length) {
+        lista.innerHTML = '<div class="empty-state">Ninguna llamada coincide con los filtros activos.</div>';
+        document.getElementById('detalle-sesion').innerHTML = '<div class="empty-state">Prueba a quitar alguno de los filtros para ver las conversaciones.</div>';
+        return;
+      }
+
+      lista.innerHTML = estado.sesiones.map((s) => {
+        const ia = s.analitica_ia || {};
+        const activa = s.session_id === estado.sesionActivaId ? 'selected' : '';
+        const estadoPill = ia.resuelta
+          ? '<span class="pill pill-ok">Resuelta</span>'
+          : '<span class="pill pill-err">No resuelta</span>';
+        const fricPill = ia.friccion_detectada
+          ? '<span class="pill pill-warn">Fricción</span>'
+          : '';
+
+        return `
+          <button class="session-item ${activa}" onclick="seleccionarSesion('${escapeHtml(s.session_id)}')">
+            <div class="session-top">
+              <span class="session-id">${escapeHtml(s.session_id)}</span>
+              <span class="session-date">${formatearFecha(s.fecha_inicio)}</span>
+            </div>
+            <div class="session-intent">${escapeHtml(ia.intencion || ia.categoria_principal || 'Sin clasificar')}</div>
+            <div class="session-badges">
+              <span class="pill pill-neutral">${escapeHtml(ia.categoria_principal || 'Pendiente')}</span>
+              ${estadoPill}
+              ${fricPill}
+            </div>
+          </button>
+        `;
+      }).join('');
+
+      if (!estado.sesionActivaId || !estado.sesiones.some((s) => s.session_id === estado.sesionActivaId)) {
+        seleccionarSesion(estado.sesiones[0].session_id);
+      }
+    }
+
+    function seleccionarSesion(sessionId) {
+      estado.sesionActivaId = sessionId;
+      const sesion = estado.sesiones.find((s) => s.session_id === sessionId);
+      if (!sesion) return;
+
+      document.querySelectorAll('.session-item').forEach((el) => {
+        el.classList.toggle('selected', el.textContent.includes(sessionId));
+      });
+
+      const ia = sesion.analitica_ia || {};
+      const tools = (sesion.herramientas_usadas || []).length
+        ? sesion.herramientas_usadas.map((t) => `<span class="pill pill-neutral">${escapeHtml(t)}</span>`).join(' ')
+        : '<span class="panel-meta">Ninguna herramienta invocada</span>';
+
+      const turnosHtml = (sesion.dialogo || []).length
+        ? sesion.dialogo.map((t) => `
+            <div class="turn turn-${t.rol === 'usuario' ? 'usuario' : 'agente'}">
+              <div class="turn-head">
+                <strong>${t.rol === 'usuario' ? 'CIUDADANO' : 'ASISTENTE'}</strong>
+                <span>${escapeHtml(t.hora || '')}</span>
+              </div>
+              <div class="turn-text">${resaltarRgpd(t.texto)}</div>
+            </div>
+          `).join('')
+        : '<div class="empty-state">Esta sesión no registró turnos de texto.</div>';
+
+      document.getElementById('detalle-sesion').innerHTML = `
+        <div class="panel-head">
+          <div>
+            <h2 class="panel-title">${escapeHtml(ia.categoria_principal || 'Sin clasificar')}</h2>
+            <p class="view-desc">${escapeHtml(ia.intencion || 'Pendiente de procesar por batch_analitico.py')}</p>
+          </div>
+          <span class="panel-meta">${escapeHtml(sesion.session_id)}</span>
+        </div>
+
+        <div class="detail-meta">
+          <div><div class="detail-meta-label">Inicio</div><div class="detail-meta-val">${formatearFecha(sesion.fecha_inicio)}</div></div>
+          <div><div class="detail-meta-label">Duración</div><div class="detail-meta-val">${sesion.duracion_seg} s</div></div>
+          <div><div class="detail-meta-label">Turnos</div><div class="detail-meta-val">${sesion.num_turnos}</div></div>
+          <div><div class="detail-meta-label">Abonado (Hash)</div><div class="detail-meta-val">${escapeHtml(sesion.abonado_hash || 'anonimo')}</div></div>
+        </div>
+
+        <div style="margin-bottom: 18px; display: flex; gap: 6px; flex-wrap: wrap; align-items: center;">
+          <span class="panel-meta" style="margin-right: 4px;">Herramientas:</span>
+          ${tools}
+        </div>
+
+        <div class="transcript">${turnosHtml}</div>
+      `;
+    }
+
+    /* --- VISTA 3: VALORACIONES --- */
+    async function cargarValoraciones() {
+      const res = await fetch('/api/valoraciones');
+      const lista = await res.json();
+      const tbody = document.getElementById('tabla-valoraciones');
+
+      if (!lista.length) {
+        tbody.innerHTML = '<tr><td colspan="6" class="empty-state">Aún no se han registrado valoraciones ciudadanas.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = lista.map((v) => {
+        const claseNota = v.puntuacion >= 4 ? 'pill-ok' : v.puntuacion === 3 ? 'pill-warn' : 'pill-err';
+        const apiPill = v.enviada_api_oficial
+          ? '<span class="pill pill-ok">Enviada</span>'
+          : '<span class="pill pill-neutral">Local</span>';
+        return `
+          <tr>
+            <td class="panel-meta">${formatearFecha(v.fecha)}</td>
+            <td><span class="score-chip ${claseNota}">${v.puntuacion} / 5</span></td>
+            <td><strong>${escapeHtml(v.instalacion)}</strong><br><span class="panel-meta">${escapeHtml(v.actividad)}</span></td>
+            <td>${resaltarRgpd(v.comentario)}</td>
+            <td class="panel-meta">${escapeHtml(v.abonado_hash)}</td>
+            <td>${apiPill}</td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    /* --- VISTA 4: BASE DE CONOCIMIENTO --- */
+    async function cargarArchivosMd() {
+      const res = await fetch('/api/conocimiento');
+      const archivos = await res.json();
+      const lista = document.getElementById('lista-md');
+
+      if (!archivos.length) {
+        lista.innerHTML = '<div class="empty-state">No hay archivos .md en datos_web/conocimiento/. Pulsa «Sincronizar desde logronodeporte.es».</div>';
+        return;
+      }
+
+      lista.innerHTML = archivos.map((a) => `
+        <button class="kb-item ${a.nombre === estado.archivoMdActivo ? 'selected' : ''}" onclick="abrirArchivoMd('${escapeHtml(a.nombre)}')">
+          <div class="kb-filename">${escapeHtml(a.nombre)}</div>
+          <div class="kb-meta">${a.tamano_kb} KB · ${formatearFecha(a.ultima_modificacion)}</div>
+        </button>
+      `).join('');
+
+      if (!estado.archivoMdActivo && archivos.length) {
+        abrirArchivoMd(archivos[0].nombre);
+      }
+    }
+
+    async function abrirArchivoMd(nombre) {
+      const res = await fetch(`/api/conocimiento/${encodeURIComponent(nombre)}`);
+      if (!res.ok) {
+        mostrarToast('No se pudo abrir el archivo seleccionado.');
+        return;
+      }
+      const data = await res.json();
+      estado.archivoMdActivo = data.nombre;
+      estado.mdSinGuardar = false;
+
+      document.getElementById('editor-titulo').textContent = data.nombre;
+      document.getElementById('editor-estado').textContent = `${data.contenido.length.toLocaleString('es-ES')} caracteres · Sincronizado`;
+      const textarea = document.getElementById('editor-md');
+      textarea.value = data.contenido;
+      textarea.disabled = false;
+      document.getElementById('btn-guardar-md').disabled = false;
+
+      document.querySelectorAll('.kb-item').forEach((el) => {
+        el.classList.toggle('selected', el.textContent.includes(nombre));
+      });
+    }
+
+    document.getElementById('editor-md').addEventListener('input', (e) => {
+      estado.mdSinGuardar = true;
+      document.getElementById('editor-estado').textContent = `${e.target.value.length.toLocaleString('es-ES')} caracteres · Cambios sin guardar`;
+    });
+
+    async function guardarArchivoMd() {
+      if (!estado.archivoMdActivo) return;
+      const btn = document.getElementById('btn-guardar-md');
+      btn.disabled = true;
+      btn.textContent = 'Guardando...';
+      try {
+        const contenido = document.getElementById('editor-md').value;
+        const res = await fetch(`/api/conocimiento/${encodeURIComponent(estado.archivoMdActivo)}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ contenido })
+        });
+        const data = await res.json();
+        estado.mdSinGuardar = false;
+        document.getElementById('editor-estado').textContent = `${contenido.length.toLocaleString('es-ES')} caracteres · Guardado`;
+        mostrarToast(data.mensaje || 'Cambios guardados.');
+        await cargarArchivosMd();
+      } catch (err) {
+        mostrarToast('Error al guardar el archivo Markdown.');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Guardar cambios';
+      }
+    }
+
+    async function sincronizarWeb() {
+      const btn = document.getElementById('btn-sync-web');
+      btn.disabled = true;
+      btn.textContent = 'Sincronizando con logronodeporte.es...';
+      try {
+        const res = await fetch('/api/conocimiento/sincronizar', { method: 'POST' });
+        const data = await res.json();
+        mostrarToast(data.mensaje || 'Sincronización finalizada.');
+        await cargarArchivosMd();
+        if (estado.archivoMdActivo) await abrirArchivoMd(estado.archivoMdActivo);
+      } catch (err) {
+        mostrarToast('No se pudo completar la sincronización web.');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Sincronizar desde logronodeporte.es';
+      }
+    }
+
+    /* Carga inicial */
+    cargarResumen();
+  </script>
+</body>
+</html>
