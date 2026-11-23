@@ -24,7 +24,7 @@
     ],
     "analitica_ia": {
       "categoria_principal": "Cursos por DNI y Valoraciones",
-      "intencion": "Consultar los cursos asociados a su DNI.",
+      "intencion": "Consultar los cursos inscritos asociados a su DNI.",
       "resuelta": true,
       "friccion_detectada": false,
       "tags": [
@@ -107,17 +107,14 @@
       }
     ],
     "analitica_ia": {
+      "procesado": true,
       "categoria_principal": "Instalaciones y Aforos",
-      "intencion": "Consultar la ocupación o aforo actual del gimnasio de Lobete.",
+      "intencion": "Consulta telefónica sobre instalaciones y aforos",
       "resuelta": true,
       "friccion_detectada": false,
       "tags": [
-        "aforo",
-        "ocupacion",
-        "gimnasio",
-        "lobete"
-      ],
-      "procesado": true
+        "instalaciones"
+      ]
     }
   },
   {
@@ -244,14 +241,16 @@
       }
     ],
     "analitica_ia": {
-      "procesado": true,
       "categoria_principal": "Tarifas y Abonos",
-      "intencion": "Consulta telefónica sobre tarifas y abonos",
-      "resuelta": true,
-      "friccion_detectada": false,
+      "intencion": "Consultar el precio del abono anual",
+      "resuelta": false,
+      "friccion_detectada": true,
       "tags": [
-        "tarifas"
-      ]
+        "tarifas",
+        "abonos",
+        "abono anual"
+      ],
+      "procesado": true
     }
   },
   {
@@ -311,14 +310,16 @@
       }
     ],
     "analitica_ia": {
-      "procesado": true,
       "categoria_principal": "Tarifas y Abonos",
-      "intencion": "Consulta telefónica sobre tarifas y abonos",
-      "resuelta": true,
-      "friccion_detectada": false,
+      "intencion": "Consulta no identificada durante la navegación por las opciones de tarifas y abonos.",
+      "resuelta": false,
+      "friccion_detectada": true,
       "tags": [
-        "tarifas"
-      ]
+        "tarifas",
+        "abonos",
+        "menu"
+      ],
+      "procesado": true
     }
   },
   {
@@ -485,6 +486,31 @@
       "tags": [
         "tarifas"
       ]
+    }
+  },
+  {
+    "session_id": "ses_014c6653aa",
+    "sala": "console-ccdf492c",
+    "fecha_inicio": "2026-11-23T09:32:16",
+    "fecha_fin": "2026-11-23T09:33:48",
+    "duracion_seg": 91.9,
+    "abonado_hash": "anonimo",
+    "herramientas_usadas": [],
+    "num_turnos": 1,
+    "dialogo": [
+      {
+        "rol": "agente",
+        "texto": "¡Hola! Bienvenido a Logroño Deporte. Para hacer una consulta sobre tarifas o abonos, pulse o diga 1; para hacer una consulta sobre reservas, anulaciones o código localizador, pulse o diga 2; para hacer una consulta sobre inscripción en actividades o cursos a la carta, pulse o diga 3; para información de instalaciones, aforo de gimnasios, balneario o pista de hielo, pulse o diga 4; para información sobre trámites, horario de oficinas o cambio de cuenta bancaria, pulse o diga 5; o para una consulta sobre un tema diferente, pulse o diga",
+        "hora": "09:33:23"
+      }
+    ],
+    "analitica_ia": {
+      "procesado": false,
+      "categoria_principal": "Pendiente de análisis nocturno",
+      "intencion": "",
+      "resuelta": true,
+      "friccion_detectada": false,
+      "tags": []
     }
   }
 ]

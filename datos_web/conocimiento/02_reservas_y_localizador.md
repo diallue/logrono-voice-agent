@@ -60,7 +60,7 @@ Más información acerca del tratamiento de datos en la Política de Privacidad.
 - Plaza de las Chiribitas nº1
 - 26004 Logroño
 - Tel 941 277 055
-- info@logronodeporte.es
+- deportes@logrono.es
 
 ---
 

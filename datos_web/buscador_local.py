@@ -1,9 +1,11 @@
-import re
-from pathlib import Path
-from tools.utils import normalizar_texto
 from datos_web.sincronizar_web import RUTA_CONOCIMIENTO, sincronizar_conocimiento
-from tools.utils import normalizar_texto
-from datos_web.sincronizar_web import RUTA_CONOCIMIENTO, sincronizar_conocimiento
+
+_TABLA_SIN_TILDES = str.maketrans("ÁÉÍÓÚÜ", "AEIOUU")
+
+
+def _normalizar_texto(texto: str) -> str:
+    """Pasa a mayúsculas, limpia extremos y elimina tildes/diéresis."""
+    return texto.strip().upper().translate(_TABLA_SIN_TILDES) if texto else ""
 
 
 def _dividir_en_fragmentos(contenido_md: str) -> list[str]:
@@ -33,7 +35,8 @@ def _dividir_en_fragmentos(contenido_md: str) -> list[str]:
 
 def buscar_en_md_locales(palabras: list[str], raices: list[str]) -> tuple[int, list[str]]:
     """
-    Lee los 5 archivos .md de datos_web/conocimiento/, puntúa sus bloques y devuelve (puntuación_máxima, lista_de_mejores_fragmentos).
+    Lee los 5 archivos .md de datos_web/conocimiento/, puntúa sus bloques y devuelve
+    (puntuación_máxima, lista_de_mejores_fragmentos).
     """
     archivos_md = sorted(RUTA_CONOCIMIENTO.glob("*.md"))
     if not archivos_md:
@@ -49,8 +52,8 @@ def buscar_en_md_locales(palabras: list[str], raices: list[str]) -> tuple[int, l
 
         for frag in _dividir_en_fragmentos(contenido):
             lineas = frag.splitlines()
-            encabezado_norm = normalizar_texto(" ".join(lineas[:3])) if lineas else ""
-            cuerpo_norm = normalizar_texto(frag)
+            encabezado_norm = _normalizar_texto(" ".join(lineas[:3])) if lineas else ""
+            cuerpo_norm = _normalizar_texto(frag)
 
             puntos = 8 if "RESUMEN OFICIAL VERIFICADO" in encabezado_norm else 0
 

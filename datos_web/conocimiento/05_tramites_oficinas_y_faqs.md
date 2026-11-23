@@ -4,21 +4,23 @@
 
 ## Resumen Oficial Verificado
 Oficinas Centrales y Trámites:
-- Dirección: Plaza de las Chiribitas, 1, 26004 Logroño. Teléfono: 941 27 70 55 y 010. Correo: info@logronodeporte.es.
-- Horario oficinas: Invierno (sep-jun) L-V 08:30-14:30, martes tarde 17:00-19:00 y miércoles continuo 08:30-17:00. Verano (jul-ago) L-V 08:00-15:00.
-- Cambio de cuenta bancaria (SEPA): Descargar el impreso SEPA en la web y enviarlo firmado por el titular a info@logronodeporte.es o entregarlo en oficinas.
+- Dirección y contacto general: Plaza de las Chiribitas, 1, 26004 Logroño. Teléfono: 941 27 70 55 y 010. WhatsApp: 602 260 182. Correo general, solicitudes (instancia Solicita), bajas de abonado y sugerencias: deportes@logrono.es.
+- Horario oficinas: Invierno (sep-jun) L-V 08:30-14:30, martes tarde 17:00-19:00 y miércoles continuo 08:30-17:00. Verano (jul-ago) L-V 08:00-15:00. Cita previa en citaprevia.logronodeporte.es.
+- Cambio de cuenta bancaria (SEPA): Descargar el impreso de Orden de domiciliación SEPA en la web y enviarlo firmado por el titular a tramites@logronodeporte.com o entregarlo en oficinas.
+- Bajas de abonado: Por escrito a deportes@logrono.es o mediante el formulario web de baja (efectiva al finalizar el trimestre natural).
 
 ---
 
 ## Fuente Oficial: https://www.logronodeporte.es/cambio-de-cuenta
 
 ## Cambio de cuenta corriente
-Deberán remitir el impreso rellenado y firmado por el titular de la cuenta corriente mediante email a la dirección: info@logronodeporte.es o personándose en las oficinas de Logroño Deporte.
+Deberán remitir el impreso rellenado y firmado por el titular de la cuenta corriente mediante email a la dirección:
+tramites@logronodeporte.com  o personándose en las oficinas de Logroño Deporte.
 Orden de domiciliación SEPA
 - Plaza de las Chiribitas nº1
 - 26004 Logroño
 - Tel 941 277 055
-- info@logronodeporte.es
+- deportes@logrono.es
 
 ---
 
@@ -90,11 +92,12 @@ Jueves de 8,30 a 14,30
 Viernes 8,30 a 14,30
 Tel: 941 27 70 55
 ¿Cómo puedo cambiar la domiciliación bancaria?
-Presencial en cualquier oficina administrativa de Logroño Deporte, o bien descargando y remitiendo el impreso rellenado y firmado por el titular de la cuenta corriente a la siguiente dirección de email: info@logronodeporte.es .
+Presencial en cualquier oficina administrativa de Logroño Deporte, o bien descargando y remitiendo el impreso rellenado y firmado por el titular de la cuenta corriente a la siguiente dirección de email:
+tramites@logronodeporte.com  .
 Orden de domiciliación SEPA
 ¿Qué tengo que hacer para darme de baja?
 Las bajas de abonado se tramitarán por escrito, bien:
-- Por correo electrónico: info@logronodeporte.es
+- Por correo electrónico: deportes@logrono.es 
 - Por la página Web de logroñodeporte.es, el formulario de solicitud de baja .
 La baja será efectiva a la finalización del trimestre natural.
 ## ACTIVIDADES DEPORTIVAS
@@ -110,7 +113,8 @@ Deberá ponerse en contacto con el coordinador Deportivo de la zona, para cualqu
 ¿Cómo solicito la baja de una actividad deportiva?
 Siempre por escrito, de cualquiera de las dos maneras:
 - De forma presencial en cualquier oficina administrativa de Logroño Deporte
-- A través del correo electronico: info@logronodeporte.es
+- A través del correo electronico:
+deportes@logrono.es 
 - A través del portal del abonado
 ## INSTALACIONES Y SERVICIOS
 ¿Cierran las instalaciones deportivas los días festivos, Navidad, Semana Santa, verano?
@@ -150,7 +154,7 @@ ver todas
 - Plaza de las Chiribitas nº1
 - 26004 Logroño
 - Tel 941 277 055
-- info@logronodeporte.es
+- deportes@logrono.es
 
 ---
 
@@ -248,7 +252,8 @@ Solicitar la baja en la condición de abonado.
 La baja en la condición de abonado debe solicitarse por escrito en nuestras oficinas de Logroño Deporte, rellenando el formulario de baja .
 Dicha baja será efectiva el último día del trimestre en que se solicite. Si se vuelve a tramitar alta como abonado en plazo inferior a un año desde la efectividad de la baja deberá pagar una matrícula.
 ### Cambio de cuenta corriente
-Deberán remitir el impreso rellenado y firmado por el titular de la cuenta corriente mediante email a la dirección: info@logronodeporte.es o personándose en las oficinas de Logroño Deporte.
+Deberán remitir el impreso rellenado y firmado por el titular de la cuenta corriente mediante email a la dirección:
+tramites@logronodeporte.com  o personándose en las oficinas de Logroño Deporte.
 Orden de domiciliación SEPA
 ### Duplicados
 ### Duplicado tarjeta de abonado o usuario a los servicios deportivos municipales
@@ -283,7 +288,8 @@ Documentación que debe aportar
 ### TARIFAS
 En el siguiente documento PDF puede descargar las Tarifas.
 ### Cambio de cuenta corriente
-Deberán remitir el impreso rellenado y firmado por el titular de la cuenta corriente mediante email info@logronodeporte.es o personándose en las oficinas de Logroño Deporte.
+Deberán remitir el impreso rellenado y firmado por el titular de la cuenta corriente mediante email
+tramites@logronodeporte.com  o personándose en las oficinas de Logroño Deporte.
 Orden de domiciliación SEPA
 ### Duplicados
 Duplicado tarjeta de abonado o usuario a los servicios deportivos municipales
@@ -303,7 +309,7 @@ Requisitos: Personas mayores de 18 años, menores de 18 pero mayores de 5 años,
 Documentación: Tener la condición de usuario de las instalaciones deportivas municipales.
 Contacto:
 Teléfonos: 941 277 055  y  010
-info@logronodeporte.es
+deportes@logrono.es 
 ### Normativas y reglamentos
 Normas de contratación de la entidad Logroño Deporte
 Reglamento General de Servicios e Instalaciones Deportivas Municipales
@@ -317,18 +323,86 @@ Normativa de uso de la zona de depósito de hamacas
 Si desea realizar algún tipo de solicitud siga los pasos que le indicamos:
 1. Descargue el PDF desde el siguiente enlace Solicita
 2. Una vez descargado rellene todos los campos, imprímalo y fírmelo.
-3. Entréguelo en las oficinas de Logroño deporte, o envíelo por correo electrónico: info@logronodeporte.es
+3. Entréguelo en las oficinas de Logroño deporte, o envíelo por correo electrónico: deportes@logrono.es 
 ### Impreso Solicitud Instalaciones Personas Físicas
 Si desea realizar la solicitud de una instalación de Logroño deporte siga los pasos que le indicamos:
 1. Descargue el PDF desde el siguiente enlace Solicitud Instalación Personas Físicas
 2. Una vez descargado rellene todos los datos, imprímalo y fírmelo.
-3. Entréguelo en las oficinas de Logroño Deporte, o envíelo por correo electrónico: info@logronodeporte.es
+3. Entréguelo en las oficinas de Logroño Deporte, o envíelo por correo electrónico: deportes@logrono.es 
 ### Impreso Solicitud Instalaciones Entidades
 Si desea realizar la solicitud de una instalación de Logroño deporte siga los pasos que le indicamos:
 1. Descargue el PDF desde el siguiente enlace Solicitud Instalación Entidades
 2. Una vez descargado rellene todos los datos, imprímalo y fírmelo.
-3. Entréguelo en las oficinas de Logroño deporte, o envíelo por correo electrónico: info@logronodeporte.es
+3. Entréguelo en las oficinas de Logroño deporte, o envíelo por correo electrónico: deportes@logrono.es 
 ### Traslado de acuerdo O.08 151/00 ABONO ANUALIDAD 2024 POR INSTALACIONES DEPORTIVAS COMPLEMENTARIAS A LA CONCESIÓN DEL CAMPO DE GOLF DE LA GRAJERA.
+
+---
+
+## Fuente Oficial: https://www.logronodeporte.es/contacto
+
+# Contacto/Sugerencias
+Los campos marcados con * son obligatorios.
+Nombre *
+[Campo de formulario: aics_name]
+Email *
+[Campo de formulario: aics_email]
+Teléfono *
+[Campo de formulario: aics_phone]
+Mensaje *
+Usted tiene [Campo de formulario: countdown_aics_message] caracteres restantes.
+Aceptar política de privacidad. *
+Por favor escriba el siguiente código de seguridad:
+...
+¿No legible? Cambiar texto.
+[Campo de formulario: captcha-code]
+[Botón: Enviar]
+- Plaza de las Chiribitas nº1
+- 26004 Logroño
+- Tel 941 277 055
+- deportes@logrono.es
+
+---
+
+## Fuente Oficial: https://www.logronodeporte.es/baja-abonado
+
+Los campos marcados con * son obligatorios.
+Nombre *
+[Campo de formulario: aics_name]
+Primer Apellido *
+[Campo de formulario: aics_apellido_1]
+Segundo apellido
+[Campo de formulario: aics_apellido_2]
+Email *
+[Campo de formulario: aics_email]
+Teléfono *
+[Campo de formulario: aics_phone]
+DNI *
+[Campo de formulario: aics_dni]
+Nº de abonado *
+[Campo de formulario: aics_numero_abonado_usuario]
+Nº de abonado
+[Campo de formulario: aics_numero_abonado_usuario_2]
+Nº de abonado
+[Campo de formulario: aics_numero_abonado_usuario_2_2]
+Nº de abonado
+[Campo de formulario: aics_numero_abonado_usuario_2_3]
+Motivos de la Baja *
+**A RELLENAR EN CASO DE LA BAJA DE UN MENOR ____________________
+**Responsable del Menor
+**Nombre del responsable
+[Campo de formulario: aics_nombre_responsable_menor]
+**Apellidos del responsable
+[Campo de formulario: aics_apellidos_responsable_menor]
+**Email del responsable
+[Campo de formulario: aics_mail_responsable_menor]
+**Teléfono del responsable
+[Campo de formulario: aics_telefono_responsable_menor]
+Aceptar política de privacidad. *
+[Botón: Enviar]
+- Plaza de las Chiribitas nº1
+- 26004 Logroño
+- Tel 941 277 055
+- deportes@logrono.es
 
 ---
 

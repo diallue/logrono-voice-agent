@@ -28,13 +28,13 @@ Ofrecemos diferentes tarifas dependiendo de si eres abonado de Logroño Deporte 
 ### DISPONIBILIDAD
 A continuación puede ver la disponibilidad del servicio, haciendo clic en cualquier horario en verde el sistema le llevará directamente a la compra del producto.
 | Balneario entrada Adulto |
-[Botón: 10:00] [Botón: 11:30] [Botón: 16:00] [Botón: 17:30] [Botón: 19:00] [Botón: 20:30]
+[Botón: 10:00] [Botón: 11:30] [Botón: 17:30] [Botón: 19:00] [Botón: 20:30]
 | Balneario Especial Familias |
 [Botón: 17:30] [Botón: 19:00]
 | Entrada Balneario H.V. |
-[Botón: 13:00] [Botón: 14:30]
+[Botón: 13:00] [Botón: 14:30] [Botón: 16:00]
 | Balneario Especial Familias H.V. |
-[Botón: 16:00]
+No hay horarios disponibles
 | Regalo pase balneario |
 No hay horarios disponibles
 ### HORARIOS
@@ -188,14 +188,14 @@ Pueden revisar la evolución del estado del aforo de las salas, antes de acudir 
 ### OCUPACIÓN
 Ver ocupación de 7 días anteriores
 ## Sala de musculación - Lobete
-Día. 13 de Noviembre de 2026
-13:57 0 plazas ocupadas de 50 totales en el gimnasio
+Día. 23 de Noviembre de 2026
+12:52 28 plazas ocupadas de 50 totales en el gimnasio
 ## Sala de musculación - La Ribera
-Día. 13 de Noviembre de 2026
-13:57 24 plazas ocupadas de 65 totales en el gimnasio
+Día. 23 de Noviembre de 2026
+12:52 34 plazas ocupadas de 65 totales en el gimnasio
 ## Sala de musculación - Las Gaunas
-Día. 13 de Noviembre de 2026
-13:57 20 plazas ocupadas de 40 totales en el gimnasio
+Día. 23 de Noviembre de 2026
+12:52 0 plazas ocupadas de 40 totales en el gimnasio
 {/}
 
 ---
@@ -234,7 +234,6 @@ A continuación puede ver la disponibilidad de las actividades de la instalació
 | Balneario - Balneario entrada Adulto |
 [Botón: 10:00]
 [Botón: 11:30]
-[Botón: 16:00]
 [Botón: 17:30]
 [Botón: 19:00]
 [Botón: 20:30]
@@ -242,10 +241,11 @@ A continuación puede ver la disponibilidad de las actividades de la instalació
 [Botón: 17:30]
 [Botón: 19:00]
 | Balneario - Balneario Especial Familias H.V. |
-[Botón: 16:00]
+No hay horarios disponibles
 | Balneario - Entrada Balneario H.V. |
 [Botón: 13:00]
 [Botón: 14:30]
+[Botón: 16:00]
 | Balneario - Regalo pase balneario |
 No hay horarios disponibles
 | Pista de hielo - Sesión Hielo |
@@ -255,8 +255,8 @@ No hay horarios disponibles
 ### OCUPACIÓN SALA DE MUSCULACIÓN
 Ver ocupación de 7 días anteriores
 ## Sala de musculación - Lobete
-Día. 13 de Noviembre de 2026
-13:57 0 plazas ocupadas de 50 totales en el gimnasio
+Día. 23 de Noviembre de 2026
+12:52 28 plazas ocupadas de 50 totales en el gimnasio
 ### HORARIOS
 TEMPORADA DE INVIERNO - Septiembre a Junio
 Modificaciones horarias Fechas Navideñas 2020
@@ -311,7 +311,7 @@ Más en esta categoría: « C.D.M. Las Norias
 - 3
 - 4
 - 5
-(116 votos)
+(117 votos)
 - C/ Paseo del Prior, 10
 - 941 490 385
 - 941 258 325
@@ -344,17 +344,18 @@ No hay horarios disponibles
 | Ciclo Indoor Virtual - Ciclo indoor virtual |
 [Botón: 07:15]
 [Botón: 09:15]
-[Botón: 11:00]
+[Botón: 10:30]
 [Botón: 12:30]
-[Botón: 14:30]
-[Botón: 20:00]
+[Botón: 15:00]
+[Botón: 17:45]
+[Botón: 21:00]
 | Musculación - Gimnasio Ribera |
 No hay horarios disponibles
 ### OCUPACIÓN SALA DE MUSCULACIÓN
 Ver ocupación de 7 días anteriores
 ## Sala de musculación - La Ribera
-Día. 13 de Noviembre de 2026
-13:57 24 plazas ocupadas de 65 totales en el gimnasio
+Día. 23 de Noviembre de 2026
+12:52 34 plazas ocupadas de 65 totales en el gimnasio
 ###
 ### HORARIOS
 TEMPORADA DE INVIERNO - (octubre a mayo)
@@ -464,28 +465,24 @@ Centro Deportivo con Frontón largo para la práctica de deportes de pelota, fú
 ### DISPONIBILIDAD
 A continuación puede ver la disponibilidad de las actividades de la instalación, haciendo clic en cualquier horario en verde el sistema le llevará directamente a la compra del producto. Recuerde que si desea comprar entrada para más de un usuario deberá de hacerlo desde el módulo que puede ver a su derecha.
 | A la Carta - Sala Ajedrez |
-[Botón: 17:30]
+No hay horarios disponibles
 | Actividades Virtuales - CORE VIRTUAL |
-[Botón: 10:00]
-| Actividades Virtuales - BODYPUMP VIRTUAL |
-[Botón: 07:05]
-[Botón: 09:00]
-[Botón: 11:00]
-[Botón: 12:00]
-[Botón: 14:00]
-[Botón: 16:00]
-[Botón: 17:00]
-[Botón: 19:00]
-| Actividades Virtuales - GRIT ATHLETIC |
+[Botón: 13:00]
 [Botón: 15:00]
+| Actividades Virtuales - BODYPUMP VIRTUAL |
+[Botón: 07:45]
+[Botón: 14:00]
+[Botón: 16:45]
+[Botón: 19:15]
+[Botón: 20:30]
+| Actividades Virtuales - GRIT ATHLETIC |
+[Botón: 07:05]
 | Actividades Virtuales - GRIT CARDIO |
-[Botón: 15:30]
+No hay horarios disponibles
 | Actividades Virtuales - GRIT STRENGTH |
 No hay horarios disponibles
 | Actividades Virtuales - BODYCOMBAT VIRTUAL |
-[Botón: 08:00]
-[Botón: 13:00]
-[Botón: 18:00]
+[Botón: 15:45]
 | Frontones - Entrada pista completa frontón Las Gaunas HORAS VALLE |
 No hay horarios disponibles
 | Frontones - Entrada Simple Frontón |
@@ -499,8 +496,8 @@ No hay horarios disponibles
 ### OCUPACIÓN SALA DE MUSCULACIÓN
 Ver ocupación de 7 días anteriores
 ## Sala de musculación - Las Gaunas
-Día. 13 de Noviembre de 2026
-13:57 20 plazas ocupadas de 40 totales en el gimnasio
+Día. 23 de Noviembre de 2026
+12:52 0 plazas ocupadas de 40 totales en el gimnasio
 ###
 ### HORARIOS
 TEMPORADA DE INVIERNO - (octubre a junio)
@@ -600,6 +597,8 @@ De 12 a 14:30 y de 16:00 a 20:00 h.
 ### DISPONIBILIDAD
 A continuación puede ver la disponibilidad de las actividades de la instalación, haciendo clic en cualquier horario en verde el sistema le llevará directamente a la compra del producto. Recuerde que si desea comprar entrada para más de un usuario deberá de hacerlo desde el módulo que puede ver a su derecha.
 | Frontones - Entrada pista completa Frontón 1 |
+[Botón: 12:00]
+[Botón: 14:00]
 [Botón: 16:00]
 [Botón: 17:00]
 [Botón: 18:00]
@@ -616,6 +615,8 @@ A continuación puede ver la disponibilidad de las actividades de la instalació
 [Botón: 15:00]
 [Botón: 19:00]
 | Frontones - Entrada Simple Frontón 1 |
+[Botón: 12:00]
+[Botón: 14:00]
 [Botón: 16:00]
 [Botón: 17:00]
 [Botón: 18:00]
@@ -646,6 +647,7 @@ A continuación puede ver la disponibilidad de las actividades de la instalació
 [Botón: 13:00]
 [Botón: 14:00]
 [Botón: 15:00]
+[Botón: 17:00]
 | Frontones - Entrada Simple Frontón 2 |
 [Botón: 16:00]
 [Botón: 17:00]
@@ -661,9 +663,13 @@ A continuación puede ver la disponibilidad de las actividades de la instalació
 [Botón: 13:00]
 [Botón: 14:00]
 [Botón: 15:00]
+[Botón: 17:00]
 | Pádel - Pista de Pádel 3 |
 No hay horarios disponibles
 | Pádel - Pista de Pádel 3 pista completa |
+[Botón: 09:30]
+[Botón: 10:30]
+[Botón: 11:30]
 [Botón: 16:00]
 [Botón: 17:00]
 [Botón: 18:00]
@@ -671,10 +677,9 @@ No hay horarios disponibles
 [Botón: 20:00]
 [Botón: 21:00]
 | Pádel - Pista de Pádel 3 pista completa VALLE |
-[Botón: 09:00]
-[Botón: 10:00]
-[Botón: 11:00]
-[Botón: 12:00]
+[Botón: 09:30]
+[Botón: 10:30]
+[Botón: 11:30]
 [Botón: 13:00]
 [Botón: 14:00]
 [Botón: 15:00]
@@ -682,6 +687,7 @@ No hay horarios disponibles
 [Botón: 18:00]
 [Botón: 19:00]
 [Botón: 20:00]
+[Botón: 21:00]
 | Pádel - Pista de Pádel 4 |
 No hay horarios disponibles
 | Pádel - Pista de Pádel 4 pista completa |
@@ -745,6 +751,9 @@ No hay horarios disponibles
 | Pádel - Pista de Pádel 2 |
 No hay horarios disponibles
 | Pádel - Pista de Pádel 2 pista completa |
+[Botón: 09:30]
+[Botón: 10:30]
+[Botón: 11:30]
 [Botón: 16:00]
 [Botón: 17:00]
 [Botón: 18:00]
@@ -752,10 +761,9 @@ No hay horarios disponibles
 [Botón: 20:00]
 [Botón: 21:00]
 | Pádel - Pista de Pádel 2 pista completa VALLE |
-[Botón: 09:00]
-[Botón: 10:00]
-[Botón: 11:00]
-[Botón: 12:00]
+[Botón: 09:30]
+[Botón: 10:30]
+[Botón: 11:30]
 [Botón: 13:00]
 [Botón: 14:00]
 [Botón: 15:00]
@@ -763,18 +771,18 @@ No hay horarios disponibles
 [Botón: 18:00]
 [Botón: 19:00]
 [Botón: 20:00]
+[Botón: 21:00]
 | Tenis - Pista 2 tenis pista completa Horas VALLE |
 [Botón: 09:00]
 [Botón: 10:00]
-[Botón: 11:00]
-[Botón: 12:00]
+[Botón: 11:30]
 [Botón: 13:00]
 [Botón: 14:00]
 [Botón: 15:00]
 | Tenis - Pista Tenis 7 |
 No hay horarios disponibles
 | Tenis - Pista Tenis 2 |
-[Botón: 19:00]
+No hay horarios disponibles
 | Tenis - Pista 8 tenis pista completa |
 [Botón: 16:00]
 [Botón: 17:00]
@@ -797,6 +805,7 @@ No hay horarios disponibles
 [Botón: 13:00]
 [Botón: 14:00]
 [Botón: 15:00]
+[Botón: 20:00]
 | Tenis - Pista 3 tenis pista completa Horas VALLE |
 [Botón: 09:00]
 [Botón: 10:00]
@@ -805,7 +814,7 @@ No hay horarios disponibles
 [Botón: 13:00]
 [Botón: 14:00]
 [Botón: 15:00]
-[Botón: 20:00]
+[Botón: 17:00]
 | Tenis - Pista Tenis 8 |
 No hay horarios disponibles
 | Tenis - Pista Tenis 3 |
@@ -842,6 +851,7 @@ No hay horarios disponibles
 [Botón: 13:00]
 [Botón: 14:00]
 [Botón: 15:00]
+[Botón: 20:00]
 | Tenis - Pista Tenis 5 |
 No hay horarios disponibles
 | Tenis - Pista 6 tenis pista completa |
@@ -866,6 +876,8 @@ No hay horarios disponibles
 [Botón: 13:00]
 [Botón: 14:00]
 [Botón: 15:00]
+[Botón: 19:00]
+[Botón: 20:00]
 | Tenis - Pista 1 tenis pista completa HORAS VALLE |
 [Botón: 09:00]
 [Botón: 10:00]
@@ -879,6 +891,7 @@ No hay horarios disponibles
 | Tenis - Pista Tenis 1 Tierra |
 No hay horarios disponibles
 | Tenis - Pista 7 tenis pista completa |
+[Botón: 11:00]
 [Botón: 16:00]
 [Botón: 17:00]
 [Botón: 18:00]
@@ -900,6 +913,7 @@ No hay horarios disponibles
 [Botón: 13:00]
 [Botón: 14:00]
 [Botón: 15:00]
+[Botón: 19:00]
 ###
 ### TARIFAS
 - A LA CARTA
@@ -960,7 +974,7 @@ Más en esta categoría: « Campo de fútbol de Varea Frontón M. Titín III »
 - Calle de Barbazán, 21
 - 941 246 182
 - 941 273 001
-- Enviar mensaje info@logronodeporte.es
+- Enviar mensaje pmlasgaunas@logro-o.org 
 ### DESCRIPCIÓN
 Piscinas Municipales con 2 piscinas ( grande y pequeña) Campo de fútbol y voley playa, Espacio ajardinado para solarium y bar-cafetería. Ofrece el alquiler y uso de cualquiera de sus espacios deportivos.-Piscina de 20x12 metros\n-Piscina de chapoteo de 4x4 metros. Campo de Fútbol playa de 40x22 metros. Campo de Voley playa de 18x9 metros. Zona estancial. Solarium. Bar
 ### Horario de la instalación

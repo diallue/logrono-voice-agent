@@ -68,12 +68,14 @@
     {
       "archivo": "05_tramites_oficinas_y_faqs.md",
       "titulo": "Trámites Administrativos, Oficinas, Cambio de Cuenta SEPA y Preguntas Frecuentes",
-      "resumen_verificado": "Oficinas Centrales y Trámites:\n- Dirección: Plaza de las Chiribitas, 1, 26004 Logroño. Teléfono: 941 27 70 55 y 010. Correo: info@logronodeporte.es.\n- Horario oficinas: Invierno (sep-jun) L-V 08:30-14:30, martes tarde 17:00-19:00 y miércoles continuo 08:30-17:00. Verano (jul-ago) L-V 08:00-15:00.\n- Cambio de cuenta bancaria (SEPA): Descargar el impreso SEPA en la web y enviarlo firmado por el titular a info@logronodeporte.es o entregarlo en oficinas.",
+      "resumen_verificado": "Oficinas Centrales y Trámites:\n- Dirección y contacto general: Plaza de las Chiribitas, 1, 26004 Logroño. Teléfono: 941 27 70 55 y 010. WhatsApp: 602 260 182. Correo general, solicitudes (instancia Solicita), bajas de abonado y sugerencias: deportes@logrono.es.\n- Horario oficinas: Invierno (sep-jun) L-V 08:30-14:30, martes tarde 17:00-19:00 y miércoles continuo 08:30-17:00. Verano (jul-ago) L-V 08:00-15:00. Cita previa en citaprevia.logronodeporte.es.\n- Cambio de cuenta bancaria (SEPA): Descargar el impreso de Orden de domiciliación SEPA en la web y enviarlo firmado por el titular a tramites@logronodeporte.com o entregarlo en oficinas.\n- Bajas de abonado: Por escrito a deportes@logrono.es o mediante el formulario web de baja (efectiva al finalizar el trimestre natural).",
       "urls_html": [
         "https://www.logronodeporte.es/cambio-de-cuenta",
         "https://www.logronodeporte.es/horario-de-oficina",
         "https://www.logronodeporte.es/preguntas-frecuentes",
-        "https://www.logronodeporte.es/tramites-y-documentos"
+        "https://www.logronodeporte.es/tramites-y-documentos",
+        "https://www.logronodeporte.es/contacto",
+        "https://www.logronodeporte.es/baja-abonado"
       ],
       "urls_documentos": [
         "https://www.logronodeporte.es/images/pdf/NORMATIVA_USO_MATERIAL_PISCINA_2026.pdf"

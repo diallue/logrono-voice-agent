@@ -192,7 +192,7 @@ Pista
 
 ## Fuente Oficial: https://www.logronodeporte.es/ciclo-indoor-virtual
 
-[Botón: 07:15] [Botón: 09:15] [Botón: 11:00] [Botón: 12:30] [Botón: 14:30] [Botón: 20:00]
+[Botón: 07:15] [Botón: 09:15] [Botón: 10:30] [Botón: 12:30] [Botón: 15:00] [Botón: 17:45] [Botón: 21:00]
 - INFORMACIÓN
 - NORMATIVA Y RECOMENDACIONES
 - FUNCIONAMIENTO
@@ -269,7 +269,7 @@ Un espacio para dudas del programa de actividades que el presonal técnico de co
 - Puedes llamar por teléfono de 9 a 14 horas de lunes a viernes o si lo prefieres puedes mandarle un correo electrónico.
 ### LISTADO DE INSTALACIONES Y PERSONAL TÉCNICO DE COORDINACIÓN DE LA ACTIVIDAD DEPORTIVA
 ### ZONA NORTE
-COORDINADORA: GLORIA TOMÁS GALLEGO · 941 49 03 85 · info@logronodeporte.es
+COORDINADORA: GLORIA TOMÁS GALLEGO · 941 49 03 85 · gloria.tomas@logronodeporte.com 
 ACTIVIDADES EN LAS INSTALACIONES
 - CDM La Ribera
 - PM Madre de Dios
@@ -283,12 +283,12 @@ ACTIVIDADES EN LAS INSTALACIONES
 - PM Duquesa de la Victoria
 - PM Ruiz de Lobera
 ### ZONA (LOBETE-NORIAS)
-COORDINADOR ZONA LOBETE Y NORIAS: CHRISTIAN D´AMICO · 941 23 59 24 · info@logronodeporte.es
+COORDINADOR ZONA LOBETE Y NORIAS: CHRISTIAN D´AMICO · 941 23 59 24 · cristian.damico@logronodeporte.com 
 ACTIVIDADES EN LAS INSTALACIONES
 - CDM Lobete
 - CDM Las Norias
 ### ZONA SUR
-COORDINADORA ZONA SUR: MERCHE REY  941 24 61 82· info@logronodeporte.es
+COORDINADORA ZONA SUR: MERCHE REY  941 24 61 82· merche.rey@logronodeporte.com 
 ACTIVIDADES EN LAS INSTALACIONES
 - PM Las Gaunas
 - PM Doctores Castroviejo

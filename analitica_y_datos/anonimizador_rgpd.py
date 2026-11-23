@@ -1,15 +1,9 @@
 import re
 import hashlib
 
-_REGEX_DNI_NIE = re.compile(
-    r"\b(?:[XYZ][\s\-\.]?(?:\d[\s\-\.]?){7}|(?:\d[\s\-\.]?){8})[A-Z]\b",
-    re.IGNORECASE,
-)
+_REGEX_DNI_NIE = re.compile(r"\b(?:[XYZ][\s\-\.]?(?:\d[\s\-\.]?){7}|(?:\d[\s\-\.]?){8})[A-Z]\b", re.IGNORECASE,)
 
-_REGEX_DNI_DELETREADO = re.compile(
-    r"(?:letra\s+[XYZ],\s*)?(?:\d,\s*){7,8}letra\s+[A-Z]\b",
-    re.IGNORECASE,
-)
+_REGEX_DNI_DELETREADO = re.compile(r"(?:letra\s+[XYZ],\s*)?(?:\d,\s*){7,8}letra\s+[A-Z]\b",re.IGNORECASE,)
 
 _TELEFONOS_PUBLICOS_LD = {"941277055", "941277001", "941235924", "941490385", "941246182", "941253304"}
 _REGEX_TELEFONO = re.compile(r"\b([679]\d{2}[\s\-\.]?\d{2,3}[\s\-\.]?\d{2,3}(?:[\s\-\.]?\d{2})?)\b")
@@ -28,7 +22,7 @@ def _reemplazar_telefono(match: re.Match) -> str:
 def _reemplazar_email(match: re.Match) -> str:
     """Oculta correos personales pero mantiene visibles los correos oficiales municipales."""
     dominio = match.group(2).lower()
-    if dominio in ("logronodeporte.es", "logrono.es", "segurosdkv.es"):
+    if dominio in ("logronodeporte.es", "logronodeporte.com", "logrono.es", "segurosdkv.es"):
         return match.group(0)
     return "[EMAIL_PROTEGIDO]"
 

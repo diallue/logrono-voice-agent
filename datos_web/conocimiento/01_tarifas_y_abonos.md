@@ -29,7 +29,7 @@ Documentación: Tener la condición de usuario de las instalaciones deportivas m
 - Plaza de las Chiribitas nº1
 - 26004 Logroño
 - Tel 941 277 055
-- info@logronodeporte.es
+- deportes@logrono.es
 
 ---
 
