@@ -512,5 +512,225 @@
       "friccion_detectada": false,
       "tags": []
     }
+  },
+  {
+    "session_id": "ses_5f33dad88e",
+    "sala": "console",
+    "fecha_inicio": "2026-11-24T09:46:39",
+    "fecha_fin": "2026-11-24T09:46:47",
+    "duracion_seg": 8.4,
+    "abonado_hash": "anonimo",
+    "herramientas_usadas": [],
+    "num_turnos": 1,
+    "dialogo": [
+      {
+        "rol": "agente",
+        "texto": "¡Hola! Bienvenido a Logroño Deporte. Para hacer una consulta sobre tarifas",
+        "hora": "09:46:47"
+      }
+    ],
+    "analitica_ia": {
+      "procesado": false,
+      "categoria_principal": "Pendiente de análisis nocturno",
+      "intencion": "",
+      "resuelta": true,
+      "friccion_detectada": false,
+      "tags": []
+    }
+  },
+  {
+    "session_id": "ses_0939d583e7",
+    "sala": "web-demo-874906b6",
+    "fecha_inicio": "2026-11-24T10:53:09",
+    "fecha_fin": "2026-11-24T10:53:52",
+    "duracion_seg": 43.2,
+    "abonado_hash": "anonimo",
+    "herramientas_usadas": [],
+    "num_turnos": 1,
+    "dialogo": [
+      {
+        "rol": "agente",
+        "texto": "¡Hola! Bienvenido a Logroño Deporte. Para hacer una consulta sobre tarifas o abonos, pulse o diga 1; para hacer",
+        "hora": "10:53:31"
+      }
+    ],
+    "analitica_ia": {
+      "procesado": false,
+      "categoria_principal": "Pendiente de análisis nocturno",
+      "intencion": "",
+      "resuelta": true,
+      "friccion_detectada": false,
+      "tags": []
+    }
+  },
+  {
+    "session_id": "ses_072fc4b566",
+    "sala": "web-demo-554612c6",
+    "fecha_inicio": "2026-11-24T10:58:20",
+    "fecha_fin": "2026-11-24T10:59:19",
+    "duracion_seg": 59.0,
+    "abonado_hash": "anonimo",
+    "herramientas_usadas": [],
+    "num_turnos": 4,
+    "dialogo": [
+      {
+        "rol": "agente",
+        "texto": "¡Hola! Bienvenido a Logroño Deporte. Para hacer una consulta sobre tarifas o abonos, pulse o diga",
+        "hora": "10:58:30"
+      },
+      {
+        "rol": "usuario",
+        "texto": "colombiana",
+        "hora": "10:58:39"
+      },
+      {
+        "rol": "agente",
+        "texto": "¿En qué puedo ayudarte hoy? Puedes elegir una de las opciones del menú o hacerme tu consulta directamente.",
+        "hora": "10:58:39"
+      },
+      {
+        "rol": "agente",
+        "texto": "Estupendo, instalaciones y servicios. ¿Quieres consultar los horarios de algún polideportivo,",
+        "hora": "10:58:55"
+      }
+    ],
+    "analitica_ia": {
+      "procesado": false,
+      "categoria_principal": "Pendiente de análisis nocturno",
+      "intencion": "",
+      "resuelta": true,
+      "friccion_detectada": false,
+      "tags": []
+    }
+  },
+  {
+    "session_id": "ses_e0b4679619",
+    "sala": "web-demo-8611b6d1",
+    "fecha_inicio": "2026-11-24T11:35:57",
+    "fecha_fin": "2026-11-24T11:39:05",
+    "duracion_seg": 188.7,
+    "abonado_hash": "anonimo",
+    "herramientas_usadas": [
+      "obtener_info_instalacion",
+      "consultar_web_logrono_deporte",
+      "consultar_ocupacion_gimnasios",
+      "finalizar_llamada"
+    ],
+    "num_turnos": 21,
+    "dialogo": [
+      {
+        "rol": "agente",
+        "texto": "¡Hola! Bienvenido a Logroño Deporte. Para hacer una consulta sobre tarifas o abonos, pulse o diga",
+        "hora": "11:36:07"
+      },
+      {
+        "rol": "usuario",
+        "texto": "¿El qué? Hola, buenas.",
+        "hora": "11:36:23"
+      },
+      {
+        "rol": "agente",
+        "texto": "¡Hola! Te repito las opciones: pulsa o di 1 para tarifas, 2 para reservas, 3 para actividades, 4 para instalaciones, 5 para trámites o 6 para",
+        "hora": "11:36:23"
+      },
+      {
+        "rol": "agente",
+        "texto": "Estupendo, instalaciones y servicios. ¿Quieres consultar los horarios de algún polideportivo, cuánta gente hay ahora mismo en los gimnasios, el Espacio Hidrotermal o la Pista",
+        "hora": "11:36:36"
+      },
+      {
+        "rol": "usuario",
+        "texto": "número cuatro",
+        "hora": "11:36:36"
+      },
+      {
+        "rol": "usuario",
+        "texto": "where Me gustaría saber los horarios de",
+        "hora": "11:36:42"
+      },
+      {
+        "rol": "agente",
+        "texto": "Claro,",
+        "hora": "11:36:42"
+      },
+      {
+        "rol": "usuario",
+        "texto": "del centro cívico de Las Gaunas",
+        "hora": "11:36:47"
+      },
+      {
+        "rol": "agente",
+        "texto": "No he encontrado el centro cívico de Las Gaunas. ¿Te refieres al Estadio de Fútbol Las Gaunas o a alguna otra instalación deportiva?",
+        "hora": "11:36:56"
+      },
+      {
+        "rol": "usuario",
+        "texto": "chiles al estadio de fútbol",
+        "hora": "11:37:00"
+      },
+      {
+        "rol": "agente",
+        "texto": "El Estadio de Fútbol Las Gaunas abre de lunes a viernes de ocho de la mañana a diez de la noche, y los fines de semana de nueve de la mañana a nueve de la noche. ¿Te gustaría saber algo más sobre esta instalación?",
+        "hora": "11:37:17"
+      },
+      {
+        "rol": "agente",
+        "texto": "Perfecto. ¿Hay alguna otra consulta",
+        "hora": "11:37:26"
+      },
+      {
+        "rol": "usuario",
+        "texto": "Sí, ahora mismo está libre.",
+        "hora": "11:37:26"
+      },
+      {
+        "rol": "agente",
+        "texto": "No puedo consultar la disponibilidad en tiempo real del estadio. Te recomiendo llamar al teléfono",
+        "hora": "11:37:38"
+      },
+      {
+        "rol": "usuario",
+        "texto": "Me gustaría saber si ahora mismo está libre.",
+        "hora": "11:37:38"
+      },
+      {
+        "rol": "usuario",
+        "texto": "Vale. Y de Lobete, el polideportivo de Lobete, ¿me puedes decir el horario y la disponibilidad? Y la tarifa.",
+        "hora": "11:37:47"
+      },
+      {
+        "rol": "agente",
+        "texto": "El C.D.M. Lobete abre de lunes a viernes de ocho de la mañana a diez de la noche, y los fines de semana de nueve de la mañana a nueve de la noche. No puedo consultar la disponibilidad en tiempo real, y las tarifas varían según la actividad o servicio que te interese. ¿Hay alguna en particular que quieras consultar?",
+        "hora": "11:38:09"
+      },
+      {
+        "rol": "usuario",
+        "texto": "ir al gimnasio",
+        "hora": "11:38:12"
+      },
+      {
+        "rol": "agente",
+        "texto": "En el C.D.M. Lobete hay ahora mismo 24 plazas ocupadas de 50, por lo que quedan 26 libres. El horario de la sala de musculación es de lunes a viernes de siete de la mañana a diez y media de la noche.",
+        "hora": "11:38:27"
+      },
+      {
+        "rol": "usuario",
+        "texto": "Venga, vale. Hasta luego.",
+        "hora": "11:38:32"
+      },
+      {
+        "rol": "agente",
+        "texto": "¡Hasta luego! Gracias por contactar con Logroño Deporte y que tengas un día muy saludable.",
+        "hora": "11:38:38"
+      }
+    ],
+    "analitica_ia": {
+      "procesado": false,
+      "categoria_principal": "Pendiente de análisis nocturno",
+      "intencion": "",
+      "resuelta": true,
+      "friccion_detectada": false,
+      "tags": []
+    }
   }
 ]

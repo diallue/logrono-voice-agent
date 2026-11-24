@@ -232,3 +232,38 @@ async def lanzar_sincronizacion_web():
         "archivos_generados": total_md,
         "mensaje": f"Sincronización completada ({total_md} archivos Markdown actualizados).",
     }
+
+# --- LLAMADA WEB GRATUITA (/llamar) ---
+
+@app.get("/llamar", response_class=HTMLResponse)
+async def servir_pagina_llamada():
+    llamar_html = RUTA_TEMPLATES / "llamar.html"
+    if not llamar_html.exists():
+        raise HTTPException(status_code=404, detail="Falta templates/llamar.html")
+    return FileResponse(llamar_html)
+
+
+@app.get("/api/livekit-token")
+async def generar_token_llamada():
+    import os
+    import uuid
+    from dotenv import load_dotenv
+    from livekit.api import AccessToken, VideoGrants
+
+    load_dotenv()
+    url = os.getenv("LIVEKIT_URL")
+    api_key = os.getenv("LIVEKIT_API_KEY")
+    api_secret = os.getenv("LIVEKIT_API_SECRET")
+    if not all([url, api_key, api_secret]):
+        raise HTTPException(status_code=500, detail="Faltan credenciales de LiveKit en .env")
+
+    sala = f"web-demo-{uuid.uuid4().hex[:8]}"
+    identidad = f"ciudadano-{uuid.uuid4().hex[:6]}"
+    token = (
+        AccessToken(api_key, api_secret)
+        .with_identity(identidad)
+        .with_name("Ciudadano")
+        .with_grants(VideoGrants(room_join=True, room=sala))
+        .to_jwt()
+    )
+    return {"url": url, "token": token, "room": sala}

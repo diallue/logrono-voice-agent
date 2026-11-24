@@ -55,14 +55,13 @@ async def my_agent(ctx: agents.JobContext):
             api_key=os.getenv("GOOGLE_API_KEY", "").strip(),
             voice="Puck",
             language="es-ES",
-            temperature=0.2,
+            temperature=0.4,
             instructions=instrucciones_actuales,
         ),
     )
 
     @session.on("conversation_item_added")
     def on_conversation_item(event):
-        # Ignora eventos internos como AgentHandoff que no tienen text_content
         texto = getattr(event.item, "text_content", None)
         if not texto or texto.strip() == "Hola, acabo de llamar.":
             return
