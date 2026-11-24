@@ -87,7 +87,11 @@
 
         await room.connect(url, token);
         await room.startAudio();
-        await room.localParticipant.setMicrophoneEnabled(true);
+        await room.localParticipant.setMicrophoneEnabled(true, {
+          echoCancellation: true,
+          noiseSuppression: true,
+          autoGainControl: true,
+        });
 
         estado.textContent = "En llamada — puedes hablar";
         btn.textContent = "Colgar llamada";

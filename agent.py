@@ -5,9 +5,10 @@ import logging
 from datetime import datetime
 from pathlib import Path
 from dotenv import load_dotenv
+from google.genai import types
 from livekit import agents, rtc
-from livekit.agents import AgentServer, AgentSession, Agent
-from livekit.plugins import google
+from livekit.agents import AgentServer, AgentSession, Agent, room_io
+from livekit.plugins import google, noise_cancellation
 
 from prompts import obtener_instrucciones_con_fecha, GREETING_MESSAGE
 from tools import LogronoDeporteTools
@@ -30,6 +31,7 @@ class Assistant(Agent, LogronoDeporteTools):
         await self.session.generate_reply(
             user_input="Hola, acabo de llamar.",
             instructions=f"Saluda al usuario inmediatamente diciendo exactamente este mensaje completo: '{GREETING_MESSAGE}'",
+            allow_interruptions=False,
         )
 
 
@@ -46,7 +48,6 @@ async def my_agent(ctx: agents.JobContext):
     herramientas_usadas: list[str] = []
 
     asistente = Assistant()
-    instrucciones_actuales = obtener_instrucciones_con_fecha()
 
     session = AgentSession(
         llm=google.realtime.RealtimeModel(
@@ -55,8 +56,15 @@ async def my_agent(ctx: agents.JobContext):
             api_key=os.getenv("GOOGLE_API_KEY", "").strip(),
             voice="Puck",
             language="es-ES",
-            temperature=0.4,
-            instructions=instrucciones_actuales,
+            temperature=0.2,
+            realtime_input_config=types.RealtimeInputConfig(
+                automatic_activity_detection=types.AutomaticActivityDetection(
+                    start_of_speech_sensitivity=types.StartSensitivity.START_SENSITIVITY_LOW,
+                    end_of_speech_sensitivity=types.EndSensitivity.END_SENSITIVITY_LOW,
+                    prefix_padding_ms=300,
+                    silence_duration_ms=800,
+                )
+            ),
         ),
     )
 
@@ -107,6 +115,11 @@ async def my_agent(ctx: agents.JobContext):
     await session.start(
         room=ctx.room,
         agent=asistente,
+        room_options=room_io.RoomOptions(
+            audio_input=room_io.AudioInputOptions(
+                noise_cancellation=noise_cancellation.BVC(),
+            ),
+        ),
     )
 
 

@@ -732,5 +732,216 @@
       "friccion_detectada": false,
       "tags": []
     }
+  },
+  {
+    "session_id": "ses_ad2f522690",
+    "sala": "web-demo-b6ab2261",
+    "fecha_inicio": "2026-11-24T13:13:05",
+    "fecha_fin": "2026-11-24T13:15:05",
+    "duracion_seg": 119.9,
+    "abonado_hash": "anonimo",
+    "herramientas_usadas": [
+      "consultar_web_logrono_deporte",
+      "finalizar_llamada"
+    ],
+    "num_turnos": 13,
+    "dialogo": [
+      {
+        "rol": "agente",
+        "texto": "¡Hola! Bienvenido a Logroño Deporte. Para hacer una consulta sobre tarifas o abonos, pulse o diga 1; para hacer una consulta sobre reservas, anulaciones o código localizador, pulse o diga 2; para hacer una consulta sobre inscripción en actividades o cursos",
+        "hora": "13:13:27"
+      },
+      {
+        "rol": "usuario",
+        "texto": "tres",
+        "hora": "13:13:43"
+      },
+      {
+        "rol": "agente",
+        "texto": "Muy bien, actividades deportivas. ¿Buscas en qué centros se imparte algún deporte concreto, o quieres información sobre inscripciones, actividades a la carta, clases virtuales o el servicio Si no puedes hoy?",
+        "hora": "13:13:43"
+      },
+      {
+        "rol": "usuario",
+        "texto": "si no puedes hoy.",
+        "hora": "13:13:47"
+      },
+      {
+        "rol": "agente",
+        "texto": "El servicio 'Si no",
+        "hora": "13:13:49"
+      },
+      {
+        "rol": "usuario",
+        "texto": "Hola.",
+        "hora": "13:14:04"
+      },
+      {
+        "rol": "agente",
+        "texto": "El servicio 'Si no puedes hoy' permite a los abonados en cursos anuales cambiar puntualmente una sesión por otra de la misma actividad en la misma semana desde el Portal del Abonado hasta una hora antes.",
+        "hora": "13:14:04"
+      },
+      {
+        "rol": "usuario",
+        "texto": "Hola.",
+        "hora": "13:14:16"
+      },
+      {
+        "rol": "agente",
+        "texto": "¿Tienes alguna otra pregunta sobre este servicio o sobre alguna otra actividad?",
+        "hora": "13:14:16"
+      },
+      {
+        "rol": "usuario",
+        "texto": "No, yo estoy",
+        "hora": "13:14:28"
+      },
+      {
+        "rol": "agente",
+        "texto": "Perfecto. Si te surge alguna otra duda o necesitas información sobre cualquier otro servicio, aquí estoy para ayudarte.",
+        "hora": "13:14:28"
+      },
+      {
+        "rol": "usuario",
+        "texto": "salud",
+        "hora": "13:14:33"
+      },
+      {
+        "rol": "agente",
+        "texto": "¡Muchas gracias por contactar con Logroño Deporte y que tengas un día muy saludable!",
+        "hora": "13:14:39"
+      }
+    ],
+    "analitica_ia": {
+      "procesado": false,
+      "categoria_principal": "Pendiente de análisis nocturno",
+      "intencion": "",
+      "resuelta": true,
+      "friccion_detectada": false,
+      "tags": []
+    }
+  },
+  {
+    "session_id": "ses_76337a6828",
+    "sala": "web-demo-81dd4694",
+    "fecha_inicio": "2026-11-24T13:34:19",
+    "fecha_fin": "2026-11-24T13:35:07",
+    "duracion_seg": 48.3,
+    "abonado_hash": "anonimo",
+    "herramientas_usadas": [],
+    "num_turnos": 1,
+    "dialogo": [
+      {
+        "rol": "agente",
+        "texto": "¡Hola! Bienvenido a Logroño Deporte. Para hacer una consulta sobre tarifas o abonos, pulse o diga 1; para hacer una consulta sobre reservas, anulaciones o código localizador,",
+        "hora": "13:34:42"
+      }
+    ],
+    "analitica_ia": {
+      "procesado": false,
+      "categoria_principal": "Pendiente de análisis nocturno",
+      "intencion": "",
+      "resuelta": true,
+      "friccion_detectada": false,
+      "tags": []
+    }
+  },
+  {
+    "session_id": "ses_e688ec0ccd",
+    "sala": "web-demo-d0896ac5",
+    "fecha_inicio": "2026-11-24T13:34:45",
+    "fecha_fin": "2026-11-24T13:38:49",
+    "duracion_seg": 243.9,
+    "abonado_hash": "anonimo",
+    "herramientas_usadas": [
+      "consultar_web_logrono_deporte",
+      "obtener_info_instalacion"
+    ],
+    "num_turnos": 15,
+    "dialogo": [
+      {
+        "rol": "agente",
+        "texto": "¡Hola! Bienvenido a Logroño Deporte. Para hacer una consulta sobre tarifas o abonos, pulse o diga 1; para hacer una consulta sobre reservas, anulaciones o código localizador, pulse o diga 2; para hacer una consulta sobre inscripción en actividades o cursos a la carta, pulse o diga 3; para información de instalaciones, aforo de gimnasios, balneario o pista de hielo, pulse o diga 4; para información sobre trámites, documentación necesaria u horario de oficinas, pulse o diga 5; o para una consulta sobre un tema diferente, pulse o diga 6.",
+        "hora": "13:35:25"
+      },
+      {
+        "rol": "usuario",
+        "texto": "seis",
+        "hora": "13:35:49"
+      },
+      {
+        "rol": "agente",
+        "texto": "¡Claro! Dime, ¿quieres consultar los cursos en los que estás inscrito diciéndome tu DNI, dejar una valoración del 1 al 5 sobre algún servicio, o tienes otra consulta?",
+        "hora": "13:35:49"
+      },
+      {
+        "rol": "usuario",
+        "texto": "otra consulta",
+        "hora": "13:35:57"
+      },
+      {
+        "rol": "agente",
+        "texto": "Perfecto, ¿qué otra consulta tienes? Cuéntame y te ayudo.",
+        "hora": "13:35:57"
+      },
+      {
+        "rol": "usuario",
+        "texto": "¿Dónde está el Palacio de los Deportes?",
+        "hora": "13:36:02"
+      },
+      {
+        "rol": "agente",
+        "texto": "No dispongo de esa información en este momento. Te recomiendo llamar al teléfono oficial de Logroño Deporte, el 941 27 70 55, o al 010 para que te indiquen la dirección exacta.",
+        "hora": "13:36:16"
+      },
+      {
+        "rol": "usuario",
+        "texto": "campo de golf",
+        "hora": "13:36:24"
+      },
+      {
+        "rol": "agente",
+        "texto": "El Campo de Golf de Logroño Julio Revuelta está disponible. ¿Te gustaría saber algo en específico sobre esta instalación?",
+        "hora": "13:36:33"
+      },
+      {
+        "rol": "usuario",
+        "texto": "¿Dónde está?",
+        "hora": "13:36:37"
+      },
+      {
+        "rol": "agente",
+        "texto": "No dispongo de la dirección exacta en este momento. Te recomiendo llamar al teléfono oficial de Logroño Deporte, el 941 27 70 55, o al 010 para que te indiquen cómo llegar.",
+        "hora": "13:36:53"
+      },
+      {
+        "rol": "usuario",
+        "texto": "¿Me puedes decir?",
+        "hora": "13:38:00"
+      },
+      {
+        "rol": "agente",
+        "texto": "Como te comentaba, no tengo la dirección exacta. Te sugiero llamar al 941 27 70 55 o al 010 para que te faciliten la información.",
+        "hora": "13:38:00"
+      },
+      {
+        "rol": "usuario",
+        "texto": "No, no. No, no. No sé si hay unos centros deportivos o gimnasios privados.",
+        "hora": "13:38:25"
+      },
+      {
+        "rol": "agente",
+        "texto": "Como asistente virtual de Logroño Deporte, solo puedo ofrecerte información sobre nuestras instalaciones y servicios públicos. Para centros privados, te sugiero consultar directamente con ellos o buscar en directorios locales.",
+        "hora": "13:38:25"
+      }
+    ],
+    "analitica_ia": {
+      "procesado": false,
+      "categoria_principal": "Pendiente de análisis nocturno",
+      "intencion": "",
+      "resuelta": true,
+      "friccion_detectada": false,
+      "tags": []
+    }
   }
 ]
