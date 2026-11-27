@@ -1,0 +1,732 @@
+{
+  "instalaciones": [
+    {
+      "codigo_gateway": 33,
+      "nombre": "C.D.M. La Ribera",
+      "alias": ["LA RIBERA", "RIBERA", "CDM LA RIBERA", "CENTRO DEPORTIVO LA RIBERA", "PISCINA LA RIBERA"],
+      "direccion": "Paseo del Prior, 10, Logroño",
+      "referencia": "junto al Palacio de Congresos Riojaforum y la Plaza de Toros",
+      "paradas_bus": [
+        {
+          "parada": "Paseo del Prior",
+          "lineas": ["Línea 1"],
+          "minutos_pie": 1,
+          "indicacion_pie": "justo frente al acceso del centro deportivo"
+        },
+        {
+          "parada": "Palacio de Congresos",
+          "lineas": ["Línea 1", "Línea 4", "Línea 5"],
+          "minutos_pie": 3,
+          "indicacion_pie": "bordeando Riojaforum hacia el Paseo del Prior"
+        }
+      ],
+      "telefono": "941 490 385"
+    },
+    {
+      "codigo_gateway": 3,
+      "nombre": "C.D.M. Las Gaunas",
+      "alias": ["CDM LAS GAUNAS", "CDM GAUNAS", "POLIDEPORTIVO LAS GAUNAS", "PISCINA LAS GAUNAS", "LAS GAUNAS", "GAUNAS"],
+      "direccion": "Calle República Argentina, 66, Logroño",
+      "referencia": "en la parte sur de Avenida República Argentina, muy cerca de Avenida Club Deportivo",
+      "paradas_bus": [
+        {
+          "parada": "Club Deportivo Prov.",
+          "lineas": ["Línea 9"],
+          "minutos_pie": 2,
+          "indicacion_pie": "junto a la esquina con Avenida República Argentina"
+        },
+        {
+          "parada": "Club Deportivo",
+          "lineas": ["Línea 1", "Línea 3", "Línea 4"],
+          "minutos_pie": 4,
+          "indicacion_pie": "subiendo hacia la calle República Argentina"
+        }
+      ],
+      "telefono": "941 246 182"
+    },
+    {
+      "codigo_gateway": 2,
+      "nombre": "C.D.M. Las Norias",
+      "alias": ["LAS NORIAS", "NORIAS", "CDM LAS NORIAS", "COMPLEJO LAS NORIAS", "PISCINAS LAS NORIAS"],
+      "direccion": "Camino de las Norias, s/n, Logroño",
+      "referencia": "al otro lado del río Ebro, junto a la zona de El Campillo",
+      "paradas_bus": [
+        {
+          "parada": "Las Norias",
+          "lineas": ["Línea 9"],
+          "minutos_pie": 1,
+          "indicacion_pie": "en el acceso principal del complejo"
+        },
+        {
+          "parada": "Las Norias (Aparcamiento)",
+          "lineas": ["Línea 3"],
+          "minutos_pie": 2,
+          "indicacion_pie": "cruzando la zona de aparcamiento hacia la entrada"
+        }
+      ],
+      "telefono": "941 263 092"
+    },
+    {
+      "codigo_gateway": 4,
+      "nombre": "C.D.M. Lobete",
+      "alias": ["LOBETE", "CDM LOBETE", "CENTRO DEPORTIVO LOBETE", "PISCINA CUBIERTA LOBETE", "BALNEARIO", "ESPACIO HIDROTERMAL", "PISTA DE HIELO"],
+      "direccion": "Calle Albia de Castro, 5, Logroño",
+      "referencia": "en el barrio de Lobete, junto a la Avenida de Lobete",
+      "paradas_bus": [
+        {
+          "parada": "Plus Ultra",
+          "lineas": ["Línea 4"],
+          "minutos_pie": 2,
+          "indicacion_pie": "bajando hacia la calle Albia de Castro"
+        },
+        {
+          "parada": "Eliseo Pinedo",
+          "lineas": ["Línea 4", "Línea 6"],
+          "minutos_pie": 3,
+          "indicacion_pie": "caminando hacia la calle Albia de Castro"
+        }
+      ],
+      "telefono": "941 235 924"
+    },
+    {
+      "codigo_gateway": null,
+      "nombre": "P. M. Vélez de Guevara",
+      "alias": ["VELEZ DE GUEVARA", "PM VELEZ DE GUEVARA", "POLIDEPORTIVO VELEZ DE GUEVARA"],
+      "direccion": "Calle Vélez de Guevara, 33, Logroño",
+      "referencia": "en la zona centro-oeste, cerca de la Plaza 1º de Mayo y calle Pérez Galdós",
+      "paradas_bus": [
+        {
+          "parada": "Plaza 1º de Mayo",
+          "lineas": ["Línea 4", "Línea 10"],
+          "minutos_pie": 3,
+          "indicacion_pie": "caminando hacia la calle Vélez de Guevara"
+        },
+        {
+          "parada": "Pepe Blanco",
+          "lineas": ["Línea 5", "Línea 10"],
+          "minutos_pie": 3,
+          "indicacion_pie": "subiendo hacia la calle Vélez de Guevara"
+        }
+      ],
+      "telefono": "941 246 182"
+    },
+    {
+      "codigo_gateway": 29,
+      "nombre": "P. M. Milenario de la Lengua",
+      "alias": ["MILENARIO DE LA LENGUA", "MILENARIO", "PM MILENARIO DE LA LENGUA"],
+      "direccion": "Calle Ramírez de Velasco, 1, Logroño",
+      "referencia": "junto a la calle Marqués de Murrieta y el entorno del colegio Milenario de la Lengua",
+      "paradas_bus": [
+        {
+          "parada": "Gonzalo de Berceo",
+          "lineas": ["Línea 2", "Línea 7"],
+          "minutos_pie": 2,
+          "indicacion_pie": "cruzando hacia la calle Ramírez de Velasco"
+        },
+        {
+          "parada": "Beratúa",
+          "lineas": ["Línea 3"],
+          "minutos_pie": 3,
+          "indicacion_pie": "saliendo hacia Marqués de Murrieta y calle Ramírez de Velasco"
+        }
+      ],
+      "telefono": "941 246 182"
+    },
+    {
+      "codigo_gateway": null,
+      "nombre": "P. M. Bretón de los Herreros",
+      "alias": ["BRETON DE LOS HERREROS", "BRETON", "PM BRETON DE LOS HERREROS"],
+      "direccion": "Calle Villamediana, 30, Logroño",
+      "referencia": "en el centro, en la calle Villamediana junto a Avenida de Colón",
+      "paradas_bus": [
+        {
+          "parada": "Villamediana",
+          "lineas": ["Línea 1"],
+          "minutos_pie": 1,
+          "indicacion_pie": "en la misma calle Villamediana"
+        },
+        {
+          "parada": "Monumento al Labrador",
+          "lineas": ["Línea 1", "Línea 3", "Línea 4", "Línea 6", "Línea 11"],
+          "minutos_pie": 4,
+          "indicacion_pie": "caminando por Avenida de la Solidaridad hacia la calle Villamediana"
+        }
+      ],
+      "telefono": "941 490 385"
+    },
+    {
+      "codigo_gateway": 23,
+      "nombre": "P. M. Gonzalo de Berceo",
+      "alias": ["GONZALO DE BERCEO", "BERCEO", "PM GONZALO DE BERCEO"],
+      "direccion": "Calle Estambrera, 28, Logroño",
+      "referencia": "en el barrio de Cascajos, en Calle Estambrera junto al colegio Gonzalo de Berceo",
+      "paradas_bus": [
+        {
+          "parada": "Juan Boscán (Calle Estambrera, 26)",
+          "lineas": ["Línea 3"],
+          "minutos_pie": 1,
+          "indicacion_pie": "a pocos metros del polideportivo en la misma calle Estambrera"
+        }
+      ],
+      "telefono": "941 490 385"
+    },
+    {
+      "codigo_gateway": 5,
+      "nombre": "P. M. de Varea",
+      "alias": ["POLIDEPORTIVO VAREA", "POLIDEPORTIVO DE VAREA", "PM VAREA", "PM DE VAREA", "PM VAREIA", "VAREIA"],
+      "direccion": "Calle Calahorra, 33, Varea, Logroño",
+      "referencia": "en el barrio de Varea, junto a la travesía principal de Calle Calahorra",
+      "paradas_bus": [
+        {
+          "parada": "Iglesia de Varea",
+          "lineas": ["Línea 2", "Línea 10"],
+          "minutos_pie": 2,
+          "indicacion_pie": "caminando hacia la calle Calahorra"
+        },
+        {
+          "parada": "La Cadena",
+          "lineas": ["Línea 2", "Línea 10"],
+          "minutos_pie": 3,
+          "indicacion_pie": "siguiendo hacia el centro de Varea por calle Calahorra"
+        }
+      ],
+      "telefono": "941 490 385"
+    },
+    {
+      "codigo_gateway": null,
+      "nombre": "P. M. San Pío X",
+      "alias": ["SAN PIO X", "SAN PIO", "SAN PIO DIEZ", "PM SAN PIO X"],
+      "direccion": "Calle Río Alhama, 3, Logroño",
+      "referencia": "en el barrio de La Estrella, muy cerca del Hospital San Pedro",
+      "paradas_bus": [
+        {
+          "parada": "Linares",
+          "lineas": ["Línea 3", "Línea 10"],
+          "minutos_pie": 3,
+          "indicacion_pie": "entrando hacia la calle Río Alhama en el barrio de La Estrella"
+        },
+        {
+          "parada": "Hospital San Pedro",
+          "lineas": ["Línea 3", "Línea 10"],
+          "minutos_pie": 4,
+          "indicacion_pie": "caminando hacia el barrio de La Estrella y calle Río Alhama"
+        }
+      ],
+      "telefono": "941 490 385"
+    },
+    {
+      "codigo_gateway": null,
+      "nombre": "P. M. San Francisco",
+      "alias": ["SAN FRANCISCO", "PM SAN FRANCISCO"],
+      "direccion": "Calle San Francisco, 1, Logroño",
+      "referencia": "junto al Puente de Piedra y el comienzo de la calle Madre de Dios",
+      "paradas_bus": [
+        {
+          "parada": "Hospital de La Rioja",
+          "lineas": ["Línea 9"],
+          "minutos_pie": 3,
+          "indicacion_pie": "saliendo desde Avenida de Viana hacia la calle San Francisco"
+        },
+        {
+          "parada": "Ayuntamiento",
+          "lineas": ["Línea 1", "Línea 2", "Línea 5", "Línea 7", "Línea 10"],
+          "minutos_pie": 4,
+          "indicacion_pie": "bajando hacia la zona de Madre de Dios y calle San Francisco"
+        }
+      ],
+      "telefono": "941 490 385"
+    },
+    {
+      "codigo_gateway": 15,
+      "nombre": "P. M. Obispo Blanco Nájera",
+      "alias": ["OBISPO BLANCO NAJERA", "OBISPO BLANCO DE NAJERA", "BLANCO NAJERA", "PM OBISPO BLANCO NAJERA"],
+      "direccion": "Calle Obispo Fidel García, 2, Logroño",
+      "referencia": "en la zona de Lobete, junto a la Avenida de Lobete y el colegio Obispo Blanco Nájera",
+      "paradas_bus": [
+        {
+          "parada": "Blanco Nájera",
+          "lineas": ["Línea 4"],
+          "minutos_pie": 1,
+          "indicacion_pie": "justo junto al acceso del polideportivo"
+        }
+      ],
+      "telefono": "941 235 924"
+    },
+    {
+      "codigo_gateway": 6,
+      "nombre": "P. M. Murrieta",
+      "alias": ["MURRIETA", "PM MURRIETA"],
+      "direccion": "Calle Murrieta, 57, Logroño",
+      "referencia": "en la calle Marqués de Murrieta, cerca del Palacio de Justicia y calle Gonzalo de Berceo",
+      "paradas_bus": [
+        {
+          "parada": "Gonzalo de Berceo",
+          "lineas": ["Línea 2", "Línea 7"],
+          "minutos_pie": 2,
+          "indicacion_pie": "caminando hacia la calle Marqués de Murrieta"
+        },
+        {
+          "parada": "Beratúa",
+          "lineas": ["Línea 3"],
+          "minutos_pie": 3,
+          "indicacion_pie": "subiendo hacia la calle Marqués de Murrieta"
+        }
+      ],
+      "telefono": "941 235 924"
+    },
+    {
+      "codigo_gateway": null,
+      "nombre": "P. M. Noveno Centenario",
+      "alias": ["NOVENO CENTENARIO", "IX CENTENARIO", "PM NOVENO CENTENARIO", "PM IX CENTENARIO"],
+      "direccion": "Calle República Argentina, 62, Logroño",
+      "referencia": "en Avenida República Argentina, justo al lado del C.D.M. Las Gaunas",
+      "paradas_bus": [
+        {
+          "parada": "Club Deportivo Prov.",
+          "lineas": ["Línea 9"],
+          "minutos_pie": 2,
+          "indicacion_pie": "subiendo unos metros por Avenida República Argentina"
+        },
+        {
+          "parada": "Club Deportivo",
+          "lineas": ["Línea 1", "Línea 3", "Línea 4"],
+          "minutos_pie": 4,
+          "indicacion_pie": "caminando por Avenida República Argentina junto al C.D.M. Las Gaunas"
+        }
+      ],
+      "telefono": "941 246 182"
+    },
+    {
+      "codigo_gateway": 17,
+      "nombre": "P. M. F. Ruiz de Lobera",
+      "alias": ["RUIZ DE LOBERA", "FRANCISCO RUIZ DE LOBERA", "F RUIZ DE LOBERA", "PM RUIZ DE LOBERA", "LOBERA"],
+      "direccion": "Calle General Urrutia, 8, Logroño",
+      "referencia": "al inicio de la calle General Urrutia, junto al parque del Carmen y Fuente de Murrieta",
+      "paradas_bus": [
+        {
+          "parada": "Navarrete el Mudo",
+          "lineas": ["Línea 6"],
+          "minutos_pie": 2,
+          "indicacion_pie": "caminando hacia el comienzo de la calle General Urrutia"
+        },
+        {
+          "parada": "Fuente de Murrieta",
+          "lineas": ["Línea 6"],
+          "minutos_pie": 4,
+          "indicacion_pie": "bajando hacia la calle General Urrutia"
+        }
+      ],
+      "telefono": "941 490 385"
+    },
+    {
+      "codigo_gateway": 25,
+      "nombre": "P. M. Madrid Manila",
+      "alias": ["MADRID MANILA", "V MADRID MANILA", "PM MADRID MANILA"],
+      "direccion": "Calle República Argentina, 54, Logroño",
+      "referencia": "en Avenida República Argentina, junto al colegio Vuelo Madrid-Manila y cerca del C.D.M. Las Gaunas",
+      "paradas_bus": [
+        {
+          "parada": "Virgen de la Esperanza",
+          "lineas": ["Línea 9"],
+          "minutos_pie": 2,
+          "indicacion_pie": "en la misma Avenida República Argentina"
+        },
+        {
+          "parada": "República Argentina",
+          "lineas": ["Línea 5"],
+          "minutos_pie": 3,
+          "indicacion_pie": "bajando por Avenida República Argentina"
+        }
+      ],
+      "telefono": "941 246 182"
+    },
+    {
+      "codigo_gateway": 19,
+      "nombre": "P. M. Caballero de la Rosa",
+      "alias": ["CABALLERO DE LA ROSA", "PM CABALLERO DE LA ROSA"],
+      "direccion": "Calle Madre de Dios, s/n, Logroño",
+      "referencia": "en la zona este, junto al colegio Caballero de la Rosa y muy cerca de Riojaforum y la Universidad",
+      "paradas_bus": [
+        {
+          "parada": "Martín Ballesteros",
+          "lineas": ["Línea 1", "Línea 4", "Línea 5"],
+          "minutos_pie": 2,
+          "indicacion_pie": "caminando hacia la calle Madre de Dios"
+        },
+        {
+          "parada": "Palacio de Congresos",
+          "lineas": ["Línea 1", "Línea 4", "Línea 5"],
+          "minutos_pie": 3,
+          "indicacion_pie": "cruzando hacia la calle Madre de Dios"
+        }
+      ],
+      "telefono": "941 490 385"
+    },
+    {
+      "codigo_gateway": 14,
+      "nombre": "P. M. Madre de Dios",
+      "alias": ["MADRE DE DIOS", "PM MADRE DE DIOS"],
+      "direccion": "Calle San Millán, 15, Logroño",
+      "referencia": "en el barrio de Madre de Dios, junto al colegio Madre de Dios y cerca de Avenida de la Paz",
+      "paradas_bus": [
+        {
+          "parada": "San Millán (Calle San Millán, 7)",
+          "lineas": ["Línea 5"],
+          "minutos_pie": 1,
+          "indicacion_pie": "a unos metros en la misma calle San Millán"
+        },
+        {
+          "parada": "Hospital San Millán",
+          "lineas": ["Línea 2", "Línea 7", "Línea 10"],
+          "minutos_pie": 4,
+          "indicacion_pie": "bajando desde Avenida de la Paz por la calle San Millán"
+        }
+      ],
+      "telefono": "941 490 385"
+    },
+    {
+      "codigo_gateway": null,
+      "nombre": "P. M. Juan Yagüe",
+      "alias": ["JUAN YAGUE", "YAGUE", "PM JUAN YAGUE"],
+      "direccion": "Calle Pamplona, 48, Logroño",
+      "referencia": "en el barrio de Yagüe, junto al colegio Juan Yagüe",
+      "paradas_bus": [
+        {
+          "parada": "Manresa",
+          "lineas": ["Línea 2"],
+          "minutos_pie": 3,
+          "indicacion_pie": "caminando por el barrio de Yagüe hacia la calle Pamplona"
+        },
+        {
+          "parada": "Toledo",
+          "lineas": ["Línea 2", "Línea 10"],
+          "minutos_pie": 5,
+          "indicacion_pie": "subiendo hacia la calle Pamplona"
+        }
+      ],
+      "telefono": "941 246 182"
+    },
+    {
+      "codigo_gateway": 22,
+      "nombre": "P. M. Escultor Vicente Ochoa",
+      "alias": ["ESCULTOR VICENTE OCHOA", "VICENTE OCHOA", "PM VICENTE OCHOA"],
+      "direccion": "Calle Poniente, 9, Logroño",
+      "referencia": "en la zona oeste, cerca de Ronda de los Cuarteles y Calle General Urrutia",
+      "paradas_bus": [
+        {
+          "parada": "Ronda de los Cuarteles",
+          "lineas": ["Línea 3"],
+          "minutos_pie": 3,
+          "indicacion_pie": "caminando hacia la calle Poniente"
+        },
+        {
+          "parada": "Blanco Lac (Calle General Urrutia, 77)",
+          "lineas": ["Línea 3", "Línea 6"],
+          "minutos_pie": 4,
+          "indicacion_pie": "entrando desde General Urrutia hacia la calle Poniente"
+        },
+        {
+          "parada": "Conservatorio",
+          "lineas": ["Línea 2"],
+          "minutos_pie": 5,
+          "indicacion_pie": "cruzando hacia la calle Poniente"
+        }
+      ],
+      "telefono": "941 246 182"
+    },
+    {
+      "codigo_gateway": null,
+      "nombre": "P. M. Doctor Castroviejo",
+      "alias": ["DOCTOR CASTROVIEJO", "DOCTORES CASTROVIEJO", "CASTROVIEJO", "PM DOCTOR CASTROVIEJO", "FRONTON CASTROVIEJO"],
+      "direccion": "Calle Duques de Nájera, 115, Logroño",
+      "referencia": "en Calle Duques de Nájera, justo frente al I.E.S. Duques de Nájera",
+      "paradas_bus": [
+        {
+          "parada": "I.E.S. Duques de Nájera",
+          "lineas": ["Línea 5", "Línea 10"],
+          "minutos_pie": 2,
+          "indicacion_pie": "cruzando la calle Duques de Nájera hacia el polideportivo"
+        }
+      ],
+      "telefono": "941 246 182"
+    },
+    {
+      "codigo_gateway": 36,
+      "nombre": "P. M. Valdegastea",
+      "alias": ["VALDEGASTEA", "PM VALDEGASTEA"],
+      "direccion": "Calle Francia, 1, Logroño",
+      "referencia": "en el barrio de Valdegastea, junto al colegio y el campo de fútbol El Salvador",
+      "paradas_bus": [
+        {
+          "parada": "Valdegastea",
+          "lineas": ["Línea 2", "Línea 5"],
+          "minutos_pie": 2,
+          "indicacion_pie": "caminando hacia la calle Francia"
+        }
+      ],
+      "telefono": "941 246 182"
+    },
+    {
+      "codigo_gateway": 31,
+      "nombre": "P. M. Espartero",
+      "alias": ["ESPARTERO", "GENERAL ESPARTERO", "PM ESPARTERO", "PM GENERAL ESPARTERO"],
+      "direccion": "Avenida de España, 13, Logroño",
+      "referencia": "en pleno centro, junto al colegio General Espartero y la Antigua Estación de Autobuses",
+      "paradas_bus": [
+        {
+          "parada": "Estación de Autobuses Antigua",
+          "lineas": ["Línea 1", "Línea 3", "Línea 5", "Línea 9"],
+          "minutos_pie": 2,
+          "indicacion_pie": "caminando por Avenida de España"
+        },
+        {
+          "parada": "Monumento al Labrador",
+          "lineas": ["Línea 1", "Línea 3", "Línea 4", "Línea 6", "Línea 11"],
+          "minutos_pie": 3,
+          "indicacion_pie": "bajando hacia Avenida de España"
+        }
+      ],
+      "telefono": "941 490 385"
+    },
+    {
+      "codigo_gateway": null,
+      "nombre": "Piscinas M. Varea JL Eguizábal",
+      "alias": ["PISCINAS DE VAREA", "PISCINAS VAREA", "PISCINAS M VAREA", "JOSE LUIS EGUIZABAL", "EGUIZABAL"],
+      "direccion": "Traseras Calle La Cadena de Varea, Varea, Logroño",
+      "referencia": "en el barrio de Varea, justo detrás de la calle La Cadena",
+      "paradas_bus": [
+        {
+          "parada": "La Cadena (Calle La Cadena, 58)",
+          "lineas": ["Línea 2", "Línea 10"],
+          "minutos_pie": 2,
+          "indicacion_pie": "accediendo hacia las traseras de la calle La Cadena"
+        },
+        {
+          "parada": "Iglesia de Varea",
+          "lineas": ["Línea 2", "Línea 10"],
+          "minutos_pie": 4,
+          "indicacion_pie": "bajando hacia la calle La Cadena"
+        }
+      ],
+      "telefono": "941 235 924"
+    },
+    {
+      "codigo_gateway": 35,
+      "nombre": "P. M. D. Siete Infantes",
+      "alias": ["SIETE INFANTES", "SIETE INFANTES DE LARA", "7 INFANTES", "PMD SIETE INFANTES", "GIMNASIO SIETE INFANTES"],
+      "direccion": "Avenida Club Deportivo, 80, Logroño",
+      "referencia": "en la Avenida Club Deportivo, en la zona de Siete Infantes",
+      "paradas_bus": [
+        {
+          "parada": "Siete Infantes de Lara",
+          "lineas": ["Línea 4"],
+          "minutos_pie": 2,
+          "indicacion_pie": "en la misma Avenida Club Deportivo"
+        }
+      ],
+      "telefono": "941 246 182"
+    },
+    {
+      "codigo_gateway": null,
+      "nombre": "C. de fútbol El Salvador",
+      "alias": ["EL SALVADOR", "CAMPO EL SALVADOR", "CAMPO DE FUTBOL EL SALVADOR"],
+      "direccion": "Avenida de Francia, 3, Logroño",
+      "referencia": "en el barrio de Valdegastea, junto al Polideportivo Municipal Valdegastea",
+      "paradas_bus": [
+        {
+          "parada": "Valdegastea",
+          "lineas": ["Línea 2", "Línea 5"],
+          "minutos_pie": 2,
+          "indicacion_pie": "siguiendo por la Avenida de Francia"
+        }
+      ],
+      "telefono": "941 246 182"
+    },
+    {
+      "codigo_gateway": 32,
+      "nombre": "P. M. D. de la Victoria",
+      "alias": ["DUQUESA DE LA VICTORIA", "DUQUESA", "PMD DE LA VICTORIA", "PM DUQUESA DE LA VICTORIA"],
+      "direccion": "Calle Duquesa de la Victoria, 34, Logroño",
+      "referencia": "en el centro, en la calle Duquesa de la Victoria muy cerca de la Plaza del Ayuntamiento y Avenida de Colón",
+      "paradas_bus": [
+        {
+          "parada": "Milicias",
+          "lineas": ["Línea 1"],
+          "minutos_pie": 2,
+          "indicacion_pie": "cruzando hacia la calle Duquesa de la Victoria"
+        },
+        {
+          "parada": "Ciriaco Garrido",
+          "lineas": ["Línea 1"],
+          "minutos_pie": 2,
+          "indicacion_pie": "saliendo hacia la calle Duquesa de la Victoria"
+        },
+        {
+          "parada": "Ayuntamiento",
+          "lineas": ["Línea 1", "Línea 2", "Línea 5", "Línea 7", "Línea 10"],
+          "minutos_pie": 4,
+          "indicacion_pie": "caminando por Duquesa de la Victoria hacia el centro"
+        }
+      ],
+      "telefono": "941 490 385"
+    },
+    {
+      "codigo_gateway": 8,
+      "nombre": "Piscinas M. El Cortijo",
+      "alias": ["EL CORTIJO", "CORTIJO", "PISCINAS EL CORTIJO", "CDM EL CORTIJO"],
+      "direccion": "Calle de Barbazán, 21, El Cortijo, Logroño",
+      "referencia": "en el barrio de El Cortijo, cerca de la Plaza de la Iglesia",
+      "paradas_bus": [
+        {
+          "parada": "Plaza de la Iglesia El Cortijo",
+          "lineas": ["Línea 6"],
+          "minutos_pie": 3,
+          "indicacion_pie": "caminando hacia la calle de Barbazán"
+        }
+      ],
+      "telefono": "941 246 182"
+    },
+    {
+      "codigo_gateway": null,
+      "nombre": "Campo de Fútbol La Estrella",
+      "alias": ["LA ESTRELLA", "CAMPO LA ESTRELLA", "CAMPO DE FUTBOL LA ESTRELLA"],
+      "direccion": "Calle Asientos, s/n, Logroño",
+      "referencia": "en el barrio de La Estrella, junto al acceso del Hospital San Pedro",
+      "paradas_bus": [
+        {
+          "parada": "Hospital San Pedro",
+          "lineas": ["Línea 3", "Línea 10"],
+          "minutos_pie": 4,
+          "indicacion_pie": "rodeando el entorno del hospital hacia la calle Asientos"
+        },
+        {
+          "parada": "Hospital San Pedro (Recinto)",
+          "lineas": ["Línea 11"],
+          "minutos_pie": 4,
+          "indicacion_pie": "saliendo hacia el barrio de La Estrella y calle Asientos"
+        },
+        {
+          "parada": "Puente Madre-Hospital",
+          "lineas": ["Línea 1", "Línea 3", "Línea 10"],
+          "minutos_pie": 5,
+          "indicacion_pie": "caminando junto al hospital hacia la calle Asientos"
+        }
+      ],
+      "telefono": "941 490 385"
+    },
+    {
+      "codigo_gateway": null,
+      "nombre": "Frontón M. El Revellín",
+      "alias": ["REVELLIN", "EL REVELLIN", "FRONTON REVELLIN", "FRONTON DEL REVELLIN", "FRONTON EL REVELLIN"],
+      "direccion": "Calle Norte, 21, Logroño",
+      "referencia": "en el casco antiguo, junto a la Muralla del Revellín y muy cerca de Fuente de Murrieta",
+      "paradas_bus": [
+        {
+          "parada": "Fuente de Murrieta",
+          "lineas": ["Línea 6"],
+          "minutos_pie": 2,
+          "indicacion_pie": "caminando hacia la Muralla del Revellín y la calle Norte"
+        },
+        {
+          "parada": "Portales",
+          "lineas": ["Línea 2", "Línea 5", "Línea 7", "Línea 9", "Línea 10"],
+          "minutos_pie": 4,
+          "indicacion_pie": "cruzando el casco antiguo hacia la calle Norte"
+        }
+      ],
+      "telefono": "941 490 385"
+    },
+    {
+      "codigo_gateway": null,
+      "nombre": "Campo de fútbol de Varea",
+      "alias": ["CAMPO DE FUTBOL DE VAREA", "CAMPO VAREA", "ANGEL AGUADO", "CAMPO ANGEL AGUADO"],
+      "direccion": "Calle Canicalejo, s/n, Varea, Logroño",
+      "referencia": "en el barrio de Varea, junto a la Iglesia de Varea y la calle Canicalejo",
+      "paradas_bus": [
+        {
+          "parada": "Iglesia de Varea",
+          "lineas": ["Línea 2", "Línea 10"],
+          "minutos_pie": 3,
+          "indicacion_pie": "siguiendo desde la iglesia hacia la calle Canicalejo"
+        }
+      ],
+      "telefono": "941 490 385"
+    },
+    {
+      "codigo_gateway": 9,
+      "nombre": "C. del Fútbol de Pradoviejo",
+      "alias": ["PRADOVIEJO", "CIUDAD DEL FUTBOL", "CIUDAD DE FUTBOL DE PRADOVIEJO", "CAMPOS DE PRADOVIEJO"],
+      "direccion": "Calle Serradero, 23, Logroño",
+      "referencia": "en la zona sur de Las Tejeras y Pradoviejo, justo al lado del Frontón Titín III",
+      "paradas_bus": [
+        {
+          "parada": "Pradoviejo",
+          "lineas": ["Línea 4", "Línea 9"],
+          "minutos_pie": 1,
+          "indicacion_pie": "justo frente a la entrada de los campos en la calle Serradero"
+        }
+      ],
+      "telefono": "941 217 840"
+    },
+    {
+      "codigo_gateway": 38,
+      "nombre": "Frontón M. Titín III",
+      "alias": ["TITIN III", "TITIN 3", "TITIN TERCERO", "TITIN", "FRONTON TITIN III", "PM TITIN III"],
+      "direccion": "Calle Serradero, 27, Logroño",
+      "referencia": "en la zona de Las Tejeras, justo al lado de los campos de fútbol de Pradoviejo",
+      "paradas_bus": [
+        {
+          "parada": "Pradoviejo",
+          "lineas": ["Línea 4", "Línea 9"],
+          "minutos_pie": 1,
+          "indicacion_pie": "a pocos metros de la puerta en la calle Serradero"
+        }
+      ],
+      "telefono": "941 217 840"
+    },
+    {
+      "codigo_gateway": 41,
+      "nombre": "Estadio M. Las Gaunas",
+      "alias": ["ESTADIO LAS GAUNAS", "ESTADIO MUNICIPAL LAS GAUNAS", "ESTADIO DE FUTBOL LAS GAUNAS", "CAMPO DE FUTBOL LAS GAUNAS"],
+      "direccion": "Avenida Moncalvillo, 1, Logroño",
+      "referencia": "junto al Palacio de los Deportes de La Rioja, con el que comparte aparcamiento público gratuito",
+      "paradas_bus": [
+        {
+          "parada": "Palacio de Deportes",
+          "lineas": ["Línea 4", "Línea 9"],
+          "minutos_pie": 2,
+          "indicacion_pie": "cruzando la explanada de aparcamiento hacia el estadio"
+        },
+        {
+          "parada": "Las Gaunas",
+          "lineas": ["Línea 9"],
+          "minutos_pie": 2,
+          "indicacion_pie": "junto al entorno del estadio"
+        },
+        {
+          "parada": "Moncalvillo",
+          "lineas": ["Línea 4"],
+          "minutos_pie": 3,
+          "indicacion_pie": "bajando por Avenida Moncalvillo"
+        }
+      ],
+      "telefono": "941 490 385"
+    },
+    {
+      "codigo_gateway": 34,
+      "nombre": "Campo de Golf de Logroño",
+      "alias": ["CAMPO DE GOLF", "GOLF", "CAMPO GOLF DE LOGRONO", "JULIO REVUELTA", "LA GRAJERA"],
+      "direccion": "Parque de la Grajera, Carretera de Burgos, kilómetro 2, Logroño",
+      "referencia": "dentro del Parque de La Grajera, saliendo de Logroño por la carretera de Burgos",
+      "paradas_bus": [
+        {
+          "parada": "La Grajera (solo sábados, domingos y festivos)",
+          "lineas": ["Metropolitano M3 y M6"],
+          "minutos_pie": 5,
+          "indicacion_pie": "desde la parada del parque hacia la entrada del campo de golf"
+        }
+      ],
+      "telefono": "941 511 360"
+    }
+  ]
+}

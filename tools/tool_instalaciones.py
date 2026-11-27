@@ -9,6 +9,7 @@ from livekit.agents import function_tool
 from tools.utils import normalizar_texto, obtener_raiz
 from datos_web.buscador_local import buscar_en_md_locales
 from datos_web.conversor_md import html_a_markdown
+from datos_web.ubicaciones import buscar_ubicacion, formatear_ubicacion_voz
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 logger = logging.getLogger("tools.instalaciones")
@@ -46,7 +47,7 @@ def _formatear_cursillo(curso: dict, incluir_centro: bool = False) -> str:
 
 
 def _consultar_instalacion_gateway(base_url: str, nombre_buscado: str) -> str | None:
-    """Busca la instalación en el Gateway y devuelve sus actividades activas."""
+    """Busca la instalación en el Gateway y devuelve sus actividades activas y dirección oficial."""
     url_base = base_url.rstrip("/")
     r_inst = requests.get(f"{url_base}/instalacion/search", timeout=4, verify=False)
     if r_inst.status_code != 200:
@@ -66,6 +67,9 @@ def _consultar_instalacion_gateway(base_url: str, nombre_buscado: str) -> str | 
     instalacion = coincidencias[0]
     cod_inst = instalacion.get("codigo")
     nom_inst = instalacion.get("nombre")
+
+    ubi = buscar_ubicacion(nom_inst, codigo_gateway=cod_inst)
+    texto_ubi = f" Dirección oficial: {ubi['direccion']}." if ubi and ubi.get("direccion") else ""
 
     r_cur = requests.get(
         f"{url_base}/cursillo/search",
@@ -91,13 +95,13 @@ def _consultar_instalacion_gateway(base_url: str, nombre_buscado: str) -> str | 
 
     if actividades_unicas:
         return (
-            f"Instalación oficial: {nom_inst} (código {cod_inst}). "
+            f"Instalación oficial: {nom_inst} (código {cod_inst}).{texto_ubi} "
             f"Actividades y cursos disponibles en este centro: {'; '.join(actividades_unicas)}. "
             f"Horario general de apertura del centro: {_HORARIO_APERTURA_DEFECTO}."
         )
 
     return (
-        f"Instalación oficial: {nom_inst} (código {cod_inst}). "
+        f"Instalación oficial: {nom_inst} (código {cod_inst}).{texto_ubi} "
         f"Horario general de apertura: {_HORARIO_APERTURA_DEFECTO}."
     )
 
@@ -221,14 +225,13 @@ def _obtener_ocupacion_gimnasios_vivo(instalacion: str = "") -> str:
 class ToolInstalaciones:
     @function_tool(
         description=(
-            "Obtiene información real, actividades deportivas, cursos y horarios de cualquier "
+            "Obtiene información real, dirección, actividades deportivas, cursos y horarios de cualquier "
             "instalación o polideportivo concreto de Logroño Deporte (ej: Lobete, La Ribera, Las Gaunas, Las Norias)."
         )
     )
     async def obtener_info_instalacion(self, nombre_instalacion: str) -> str:
         """
-        Args:
-            nombre_instalacion: Nombre de la instalación o centro deportivo que consulta el usuario.
+        Args: nombre_instalacion: Nombre de la instalación o centro deportivo que consulta el usuario.
         """
         logger.info(f"[TOOL] obtener_info_instalacion -> '{nombre_instalacion}'")
         gateway_url = os.getenv("LDP_GATEWAY_URL", "https://ldp-gateway.jig.es")
@@ -240,7 +243,32 @@ class ToolInstalaciones:
         except Exception as e:
             logger.warning(f"Error consultando Gateway para '{nombre_instalacion}': {e}")
 
-        return f"Información de {nombre_instalacion}: Horario habitual de {_HORARIO_APERTURA_DEFECTO}."
+        ubi = buscar_ubicacion(nombre_instalacion)
+        texto_ubi = f" Dirección oficial: {ubi['direccion']}." if ubi and ubi.get("direccion") else ""
+        return f"Información de {nombre_instalacion}.{texto_ubi} Horario habitual de {_HORARIO_APERTURA_DEFECTO}."
+
+    @function_tool(
+        description=(
+            "Devuelve la dirección oficial exacta, referencias cercanas, paradas y líneas de autobús urbano "
+            "con minutos andando hasta la entrada y teléfono de cualquiera de las 35 instalaciones deportivas "
+            "municipales de Logroño Deporte. Úsala SIEMPRE que el usuario pregunte dónde está una instalación "
+            "deportiva o cómo llegar a ella. Para la dirección u horario de las oficinas centrales, usa "
+            "consultar_web_logrono_deporte."
+        )
+    )
+    async def obtener_ubicacion_instalacion(self, nombre_instalacion: str) -> str:
+        """
+        Args: nombre_instalacion: Nombre del centro deportivo, polideportivo, campo, piscina o frontón por el que pregunta el usuario.
+        """
+        logger.info(f"[TOOL] obtener_ubicacion_instalacion -> '{nombre_instalacion}'")
+        ubi = buscar_ubicacion(nombre_instalacion)
+        if ubi and ubi.get("direccion"):
+            return formatear_ubicacion_voz(ubi)
+        return (
+            f"No figura ninguna instalación municipal de Logroño Deporte llamada '{nombre_instalacion}' "
+            "en el catálogo oficial de ubicaciones. No inventes la dirección: indícalo con claridad "
+            "y remite al usuario a logronodeporte.es o al teléfono 941 27 70 55."
+        )
 
     @function_tool(
         description=(
@@ -251,8 +279,7 @@ class ToolInstalaciones:
     )
     async def buscar_actividad_deportiva(self, nombre_actividad: str) -> str:
         """
-        Args:
-            nombre_actividad: Nombre del deporte, curso o actividad por la que pregunta el usuario.
+        Args: nombre_actividad: Nombre del deporte, curso o actividad por la que pregunta el usuario.
         """
         logger.info(f"[TOOL] buscar_actividad_deportiva -> '{nombre_actividad}'")
         gateway_url = os.getenv("LDP_GATEWAY_URL", "https://ldp-gateway.jig.es")
@@ -271,8 +298,7 @@ class ToolInstalaciones:
     )
     async def consultar_ocupacion_gimnasios(self, instalacion: str = "") -> str:
         """
-        Args:
-            instalacion: Nombre del gimnasio si el usuario pregunta por uno concreto (ej: 'Lobete', 'La Ribera', 'Las Gaunas') o vacío para ver los tres.
+        Args: instalacion: Nombre del gimnasio si el usuario pregunta por uno concreto (ej: 'Lobete', 'La Ribera', 'Las Gaunas') o vacío para ver los tres.
         """
         logger.info(f"[TOOL] consultar_ocupacion_gimnasios -> '{instalacion}'")
         return await asyncio.to_thread(_obtener_ocupacion_gimnasios_vivo, instalacion)

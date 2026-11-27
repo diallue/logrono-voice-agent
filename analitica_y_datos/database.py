@@ -104,10 +104,10 @@ async def guardar_valoracion_db(
 
     await asyncio.to_thread(_guardar_en_json_local, ARCHIVO_VALORACIONES, documento)
 
-    col = _obtener_coleccion_mongo_async("valoraciones")
+    col = _obtener_coleccion_mongo_sync("valoraciones")
     if col is not None:
         try:
-            await col.insert_one(dict(documento))
+            await asyncio.to_thread(col.insert_one, dict(documento))
             logger.info(f"[DB] Valoración {documento['valoracion_id']} guardada en MongoDB Atlas.")
         except Exception as e:
             logger.warning(f"Aviso MongoDB en valoración (respaldo local guardado): {e}")
@@ -156,10 +156,10 @@ async def guardar_sesion_llamada_db(
 
     await asyncio.to_thread(_guardar_en_json_local, ARCHIVO_SESIONES, documento)
 
-    col = _obtener_coleccion_mongo_async("sessions")
+    col = _obtener_coleccion_mongo_sync("sessions")
     if col is not None:
         try:
-            await col.insert_one(dict(documento))
+            await asyncio.to_thread(col.insert_one, dict(documento))
             logger.info(f"[DB] Sesión {documento['session_id']} guardada en MongoDB Atlas.")
         except Exception as e:
             logger.warning(f"Aviso MongoDB en sesión (respaldo local guardado): {e}")
